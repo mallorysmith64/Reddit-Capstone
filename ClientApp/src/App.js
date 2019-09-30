@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router'
+// import { Route } from 'react-router'
 // import { Home } from './components/Home'
 import Nav from './components/Nav'
 import Banner from './components/Banner'
