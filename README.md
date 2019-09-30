@@ -1,23 +1,9 @@
-# Defualt Template for SDG .NET Course
+# Reddit
 
-This is the default template for a simple .NET Core Web React App. This template has: 
+This CRUD app recreates the look and feel of Reddit.
 
-- CORS Enabled
-- Postgres & EF Core
-- Swagger
-- Ready for Docker Deployment
+Features within one subreddit includes:
 
-to use:
-
-- [ ] Update your database name in `DatabaseContext.cs`
-
-to Deploy to heroku:
-- [ ] create a web app on heroku, make sure to have the CLI downloaded, installed, logged in and be logged into the container via heroku. 
-- [ ] Update your `dockerfile` to use your `*.dll` file instead of `dotnet-sdg-template.dll` 
-- [ ] Update the deploy script:
-    - [ ] change `sdg-template-image` to `your-project-name-image`
-    - [ ] change `heroku-web-app` to your web app name on heroku
-
-## PROTIP: 
-
-When you are complete with the project and have turned it in to your instructor, update this read me with details about the assignment. 
+1. Ability to create new text content
+2. Ability to read previous posts
+3. Ability to update and delete posts made
