@@ -29,7 +29,7 @@ namespace reddit_capstone
       if (!optionsBuilder.IsConfigured)
       {
         var envConn = Environment.GetEnvironmentVariable("DATABASE_URL");
-#warning Be sure to update to your correct connection string to the point to the correct database
+        // #warning Be sure to update to your correct connection string to the point to the correct database
         var conn = "server=localhost;database=redditDB";
         if (envConn != null)
         {
