@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
+import { Link } from 'react-router-dom'
+// import NewPostPage from './NewPostPage'
 
 const Nav = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -12,36 +14,45 @@ const Nav = () => {
           <img src={RedditIcon} alt="reddit icon" width="30" height="30" />
           <h1 className="reddit-text">reddit</h1>
         </section>
+
         <div className="dropdown is-hoverable">
           <div className="dropdown-trigger">
-            <button
-              className="subreddit-dropdown"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu"
-            >
-              <section className="subreddit-text">
-                <img
-                  src={SubredditIcon}
-                  alt="subreddit icon"
-                  width="30"
-                  height="30"
-                />
-                r/chemistry
-              </section>
-              <i className="fas fa-caret-down"></i>
-            </button>
+            <Link to="/SubredditBody">
+              <button
+                className="subreddit-dropdown"
+                aria-haspopup="true"
+                aria-controls="dropdown-menu"
+              >
+                <section className="subreddit-text">
+                  <img
+                    src={SubredditIcon}
+                    alt="subreddit icon"
+                    width="30"
+                    height="30"
+                  />
+                  r/chemistry
+                </section>
+                <i className="fas fa-caret-down"></i>
+              </button>
+            </Link>
           </div>
+
           <div className="dropdown-menu" id="dropdown-menu" role="menu">
             <div className="dropdown-content">
-              <a href="/#" className="dropdown-item">
-                Home
-              </a>
-              <a href="/#" className="dropdown-item">
-                Subreddit
-              </a>
+              <Link to="/HomePage">
+                <a href="/#" className="dropdown-item">
+                  Home
+                </a>
+              </Link>
+              <Link to="/Subreddit">
+                <a href="/#" className="dropdown-item">
+                  Subreddit
+                </a>
+              </Link>
             </div>
           </div>
         </div>
+
         <section className="search-container">
           <input
             type="search"
@@ -54,11 +65,16 @@ const Nav = () => {
         <button className="search-glass-button">
           <i className="fas fa-search"></i>
         </button>
-        <section className="create-post-button">
-          <button>
-            <i className="fas fa-pen"></i>
-          </button>
-        </section>
+
+        {/* post button */}
+        <Link to="/NewPostPage">
+          <section className="create-post-button">
+            <button>
+              <i className="fas fa-pen"></i>
+            </button>
+          </section>
+        </Link>
+
         <section>
           <div className="dropdown is-hoverable">
             <div className="dropdown-trigger">
@@ -80,6 +96,7 @@ const Nav = () => {
                 <i className="fas fa-caret-down"></i>
               </button>
             </div>
+
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <div className="dropdown-content">
                 <a href="/#" className="dropdown-item">
