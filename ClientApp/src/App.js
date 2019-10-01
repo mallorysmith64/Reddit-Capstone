@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Community from './components/Community'
 
 import Subreddit from './components/Subreddit'
@@ -17,14 +17,9 @@ export default class App extends Component {
       <>
         <Router>
           <Switch>
-            <Route exact path="/HomePage" exact component={HomePage}></Route>
-            <Route exact path="/Subreddit" exact component={Subreddit}></Route>
-            <Route
-              exact
-              path="/NewPostPage"
-              exact
-              component={NewPostPage}
-            ></Route>
+            <Route exact path="/HomePage" component={HomePage}></Route>
+            <Route exact path="/Subreddit" component={Subreddit}></Route>
+            <Route exact path="/NewPostPage" component={NewPostPage}></Route>
             <Subreddit />
             <Community />
           </Switch>

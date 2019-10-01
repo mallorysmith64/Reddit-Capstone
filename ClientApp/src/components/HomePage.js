@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
-import Subreddit from './Subreddit'
+// import Subreddit from './Subreddit'
 
 class HomePage extends Component {
   render() {

@@ -7,7 +7,7 @@ import Banner from './Banner'
 const Subreddit = props => {
   // const [id] = useState(props.match.params.id)
   const [post, setPost] = useState([])
-  const [comment, setComment] = useState([])
+  const [setComment] = useState([])
 
   const getPost = async id => {
     const resp = await axios.get('https://localhost:5001/api/Post')
