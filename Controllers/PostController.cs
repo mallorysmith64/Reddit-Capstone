@@ -31,6 +31,41 @@ namespace StackOverFlow.Controllers
       return entry;
     }
 
+    [HttpPost("{postId}/comments")]
+    public ActionResult<Comment> CreateComment(int postId, [FromBody]Comment comment)
+    {
+      // check if the blog exists
+      var post = context.Posts.FirstOrDefault(f => f.ID == postId);
+      if (post == null)
+      {
+        return NotFound();
+      }
+      else
+      {
+        comment.PostID = postId;
+        context.Comments.Add(comment);
+        context.SaveChanges();
+        return Ok();
+      }
+    }
+
+    //testing this http request currently
+    [HttpPatch("{id}/upVote")]
+    public ActionResult<Post> updateQuestionUpVote(int id)
+    {
+      var post = context.Posts.FirstOrDefault(q => q.ID == id);
+      if (post == null)
+      {
+        return NotFound();
+      }
+      else
+      {
+        post.UpVote += 1;
+        context.SaveChanges();
+        return post;
+      }
+    }
+
     //get all questions
     [HttpGet]
     public ActionResult<IEnumerable<Post>> GetAllPosts()
@@ -74,23 +109,6 @@ namespace StackOverFlow.Controllers
     //   return Ok(new DeleteResponse { Post = post });
     // }
 
-    [HttpPost("{postId}/comments")]
-    public ActionResult<Comment> CreateComment(int postId, [FromBody]Comment comment)
-    {
-      // check if the blog exists
-      var post = context.Posts.FirstOrDefault(f => f.ID == postId);
-      if (post == null)
-      {
-        return NotFound();
-      }
-      else
-      {
-        comment.PostID = postId;
-        context.Comments.Add(comment);
-        context.SaveChanges();
-        return Ok();
-      }
-    }
   }
 }
 
