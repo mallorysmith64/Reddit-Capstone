@@ -1,4 +1,5 @@
 using System;
+using Reddit_Capstone.Models;
 
 namespace StackOverFlow.Models
 {
@@ -13,5 +14,7 @@ namespace StackOverFlow.Models
     public string Content { get; set; }
     public int? PostID { get; set; }
     public Post Post { get; set; }
+    //connect comment table to user table
+    public User User { get; set; }
   }
 }

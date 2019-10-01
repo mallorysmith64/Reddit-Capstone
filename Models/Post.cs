@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Reddit_Capstone.Models;
 
 namespace StackOverFlow.Models
 {
@@ -13,7 +14,9 @@ namespace StackOverFlow.Models
     public string Title { get; set; }
     public string Content { get; set; }
     public DateTime TimePassed { get; set; } = DateTime.Now;
-    //link post table to comments: one to many relationship
+    //connect post table to comments: one to many relationship
     public List<Comment> Comments { get; set; } = new List<Comment>();
+    //connect post table to user table
+    public User User { get; set; }
   }
 }
