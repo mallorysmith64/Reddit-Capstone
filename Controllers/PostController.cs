@@ -4,6 +4,8 @@ using System.Linq;
 using reddit_capstone;
 using StackOverFlow.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 // using Microsoft.EntityFrameworkCore;
 // using StackOverFlow.ViewModels;
 
@@ -22,13 +24,25 @@ namespace StackOverFlow.Controllers
     }
     //the only requests that should be [FromBody] is post and put, get and delete are NOT [FromBody]
 
-    //make a question
+
+    //post content
     [HttpPost]
-    public ActionResult<Post> CreateEntry([FromBody]Post entry)
+    public async Task<ActionResult<Post>> CreateEntry([FromBody]Post entry)
     {
-      context.Posts.Add(entry);
-      context.SaveChanges();
+      //put await when adding and saving
+      await context.Posts.AddAsync(entry);
+      await context.SaveChangesAsync();
       return entry;
+    }
+
+    //get all posts
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()
+    {
+      //do NOT need await when simply ordering posts
+      var posts = context.Posts.OrderByDescending(post => post.TimePassed);
+      //do need await when returning posts
+      return await posts.ToListAsync();
     }
 
     [HttpPost("{postId}/comments")]
@@ -49,7 +63,6 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    //testing this http request currently
     [HttpPatch("{id}/UpVote")]
     public ActionResult<Post> updateQuestionUpVote(int id)
     {
@@ -82,13 +95,6 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    //get all questions
-    [HttpGet]
-    public ActionResult<IEnumerable<Post>> GetAllPosts()
-    {
-      var posts = context.Posts.OrderByDescending(post => post.TimePassed);
-      return posts.ToList();
-    }
 
     //get a question
     [HttpGet("{id}")]
