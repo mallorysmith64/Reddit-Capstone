@@ -11,15 +11,15 @@ const Subreddit = props => {
 
   const getPost = async id => {
     const resp = await axios.get('https://localhost:5001/api/Post')
-    console.log(resp)
-    console.log(resp.data)
+    console.log('question response', resp)
+    console.log('get question', resp.data)
     setPost(resp.data)
   }
 
   const getComment = async id => {
     const resp = await axios.get('https://localhost:5001/api/Comment')
-    console.log(resp)
-    console.log(resp.data)
+    console.log('comment response', resp)
+    console.log('get comment', resp.data)
     setComment(resp.data)
   }
 
@@ -53,7 +53,7 @@ const Subreddit = props => {
         </section>
       </section>
 
-      <section className="subreddit-body">
+      {/* <section className="subreddit-body">
         <section className="posts">
           <section className="rectangles">
             <header className="title">Title</header>
@@ -87,7 +87,7 @@ const Subreddit = props => {
             </button>
           </section>
         </section>
-      </section>
+      </section> */}
     </>
   )
 }
