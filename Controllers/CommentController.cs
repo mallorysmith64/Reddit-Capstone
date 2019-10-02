@@ -52,7 +52,6 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    //does not work yet; error 400 on put request
     //update answer/comment
     [HttpPut("{id}")]
     public ActionResult<Comment> Update(int id, [FromBody]Comment newDetails)

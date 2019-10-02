@@ -63,6 +63,7 @@ const Subreddit = props => {
             <button className="arrows">
               <section className="down-arrow">&#x2B07;</section>
             </button>
+
             <button className="comments">
               <p>Comments</p>
             </button>

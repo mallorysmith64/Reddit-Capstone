@@ -141,7 +141,6 @@ namespace StackOverFlow.Controllers
     //   }
     // }
 
-
     //delete posts
     [HttpDelete("{id}")]
     public ActionResult DeleteBlog(int id)
