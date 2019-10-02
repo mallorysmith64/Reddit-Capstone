@@ -39,15 +39,17 @@ const Nav = () => {
 
           <div className="dropdown-menu" id="dropdown-menu" role="menu">
             <div className="dropdown-content">
-              <Link to="/HomePage">
+              <Link to="/HomePage" className="dropdown-item">
+                Home
+              </Link>
+              {/* link is seen as an a tag, having an a tag within an a tag is NOT allowed */}
+              {/* <Link to="/HomePage">
                 <a href="/#" className="dropdown-item">
                   Home
                 </a>
-              </Link>
-              <Link to="/Subreddit">
-                <a href="/#" className="dropdown-item">
-                  Subreddit
-                </a>
+              </Link> */}
+              <Link to="/Subreddit" className="dropdown-item">
+                Subreddit
               </Link>
             </div>
           </div>

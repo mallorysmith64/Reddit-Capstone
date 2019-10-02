@@ -7,7 +7,7 @@ import Banner from './Banner'
 const Subreddit = props => {
   // const [id] = useState(props.match.params.id)
   const [post, setPost] = useState([])
-  const [setComment] = useState([])
+  const [comment, setComment] = useState([])
 
   const getPost = async id => {
     const resp = await axios.get('https://localhost:5001/api/Post')
@@ -29,6 +29,7 @@ const Subreddit = props => {
   }, [])
 
   if (!post) return 'null'
+  if (!comment) return 'null'
 
   return (
     <>
@@ -63,7 +64,6 @@ const Subreddit = props => {
             <button className="arrows">
               <section className="down-arrow">&#x2B07;</section>
             </button>
-
             <button className="comments">
               <p>Comments</p>
             </button>
