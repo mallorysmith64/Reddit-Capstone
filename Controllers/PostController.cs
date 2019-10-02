@@ -45,6 +45,22 @@ namespace StackOverFlow.Controllers
       return await posts.ToListAsync();
     }
 
+    //get one post
+    [HttpGet("{id}")]
+    public async Task<ActionResult> GetPost(int id)
+    {
+      var post = await context.Posts.FirstOrDefaultAsync(o => o.ID == id);
+      if (post == null)
+      {
+        return NotFound();
+      }
+      else
+      {
+        return Ok(post);
+      }
+    }
+
+    //post comments
     [HttpPost("{postId}/comments")]
     public ActionResult<Comment> CreateComment(int postId, [FromBody]Comment comment)
     {
@@ -63,6 +79,7 @@ namespace StackOverFlow.Controllers
       }
     }
 
+    //update upvotes on quesions
     [HttpPatch("{id}/UpVote")]
     public ActionResult<Post> updateQuestionUpVote(int id)
     {
@@ -79,6 +96,7 @@ namespace StackOverFlow.Controllers
       }
     }
 
+    //update downvotes on questions
     [HttpPatch("{id}/DownVote")]
     public ActionResult<Post> updateQuestionDownVote(int id)
     {
@@ -95,23 +113,7 @@ namespace StackOverFlow.Controllers
       }
     }
 
-
-    //get a question
-    [HttpGet("{id}")]
-    public ActionResult GetPost(int id)
-    {
-      var post = context.Posts.FirstOrDefault(o => o.ID == id);
-      if (post == null)
-      {
-        return NotFound();
-      }
-      else
-      {
-        return Ok(post);
-      }
-    }
-
-    //update question
+    //update post
     [HttpPut("{id}")]
     public ActionResult<Post> Update(int id, [FromBody]Post newDetails)
     {
