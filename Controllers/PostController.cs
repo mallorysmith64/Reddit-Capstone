@@ -126,13 +126,23 @@ namespace StackOverFlow.Controllers
       return newDetails;
     }
 
-    // [HttpDelete("{id}")]
-    // public ActionResult DeleteBlog(int id)
-    // {
-    //   var post = context.Posts.FirstOrDefault(f => f.ID == id);
-    //   return Ok(new DeleteResponse { Post = post });
-    // }
-
+    //allow user to delete posts
+    //does not currently work
+    [HttpDelete("{id}")]
+    public ActionResult DeleteBlog(int id)
+    {
+      var post = context.Posts.FirstOrDefault(f => f.ID == id);
+      if (post == null)
+      {
+        return NotFound();
+      }
+      else
+      {
+        context.Posts.Remove(post);
+        context.SaveChanges();
+        return Ok();
+      }
+    }
   }
 }
 
