@@ -90,6 +90,13 @@ namespace StackOverFlow.Controllers
       return newDetails;
     }
 
+    // todo: make a get request to actually get the upvotes
+
+
+
+
+
+
     //update upvotes on posts
     [HttpPatch("{id}/UpVote")]
     public ActionResult<Post> updateQuestionUpVote(int id)
