@@ -50,7 +50,7 @@ namespace StackOverFlow.Controllers
     }
 
     //testing this http request currently
-    [HttpPatch("{id}/upVote")]
+    [HttpPatch("{id}/UpVote")]
     public ActionResult<Post> updateQuestionUpVote(int id)
     {
       var post = context.Posts.FirstOrDefault(q => q.ID == id);
@@ -61,6 +61,22 @@ namespace StackOverFlow.Controllers
       else
       {
         post.UpVote += 1;
+        context.SaveChanges();
+        return post;
+      }
+    }
+
+    [HttpPatch("{id}/DownVote")]
+    public ActionResult<Post> updateQuestionDownVote(int id)
+    {
+      var post = context.Posts.FirstOrDefault(q => q.ID == id);
+      if (post == null)
+      {
+        return NotFound();
+      }
+      else
+      {
+        post.DownVote += 1;
         context.SaveChanges();
         return post;
       }
