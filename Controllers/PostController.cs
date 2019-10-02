@@ -6,8 +6,6 @@ using StackOverFlow.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-// using Microsoft.EntityFrameworkCore;
-// using StackOverFlow.ViewModels;
 
 namespace StackOverFlow.Controllers
 {
@@ -23,7 +21,6 @@ namespace StackOverFlow.Controllers
       this.context = _context;
     }
     //the only requests that should be [FromBody] is post and put, get and delete are NOT [FromBody]
-
 
     //post content
     [HttpPost]
@@ -79,7 +76,21 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    //update upvotes on quesions
+
+    //update post
+    [HttpPut("{id}")]
+    public ActionResult<Post> Update(int id, [FromBody]Post newDetails)
+    {
+      if (id != newDetails.ID)
+      {
+        return BadRequest();
+      }
+      context.Posts.Update(newDetails);
+      context.SaveChanges();
+      return newDetails;
+    }
+
+    //update upvotes on posts
     [HttpPatch("{id}/UpVote")]
     public ActionResult<Post> updateQuestionUpVote(int id)
     {
@@ -96,7 +107,7 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    //update downvotes on questions
+    //update downvotes on posts
     [HttpPatch("{id}/DownVote")]
     public ActionResult<Post> updateQuestionDownVote(int id)
     {
@@ -113,21 +124,25 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    //update post
-    [HttpPut("{id}")]
-    public ActionResult<Post> Update(int id, [FromBody]Post newDetails)
-    {
-      if (id != newDetails.ID)
-      {
-        return BadRequest();
-      }
-      context.Posts.Update(newDetails);
-      context.SaveChanges();
-      return newDetails;
-    }
+    //todo: update upvotes on comments
+    // [HttpPatch("{ID}/Comment/{ID}/UpVote")]
+    // public ActionResult<Comment> updateAnswerUpVote(int id)
+    // {
+    //   var comment = context.Comments.FirstOrDefault(a => a.ID == id);
+    //   if (comment == null)
+    //   {
+    //     return NotFound();
+    //   }
+    //   else
+    //   {
+    //     comment.UpVote += 1;
+    //     context.SaveChanges();
+    //     return comment;
+    //   }
+    // }
 
-    //allow user to delete posts
-    //does not currently work
+
+    //delete posts
     [HttpDelete("{id}")]
     public ActionResult DeleteBlog(int id)
     {

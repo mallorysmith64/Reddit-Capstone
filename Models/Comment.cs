@@ -11,7 +11,7 @@ namespace StackOverFlow.Models
     public int DownVote { get; set; }
     public string PostedBy { get; set; }
     public DateTime TimePassed { get; set; } = DateTime.Now;
-    public string Content { get; set; }
+    public string Comments { get; set; }
     public int? PostID { get; set; }
     public Post Post { get; set; }
     //connect comment table to user table
