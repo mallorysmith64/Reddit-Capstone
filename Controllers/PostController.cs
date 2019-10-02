@@ -131,7 +131,7 @@ namespace StackOverFlow.Controllers
     [HttpDelete("{id}")]
     public ActionResult DeleteBlog(int id)
     {
-      var post = context.Posts.FirstOrDefault(f => f.ID == id);
+      var post = context.Posts.FirstOrDefault(d => d.ID == id);
       if (post == null)
       {
         return NotFound();
