@@ -36,30 +36,11 @@ const Subreddit = props => {
     <>
       <Nav />
       <Banner />
-      {/* putting votes here breaks everything */}
-      {/* <Votes /> */}
+      {/* putting votes here breaks everything */} {/* <Votes /> */}
       {/* <Votes id={2} /> */}
       <section className="subreddit-body">
         <section className="posts">
           <section className="rectangles">
-            <header className="title">Title : {post.title || 'N/A'}</header>
-            {/* <button className="arrows">
-              <section className="up-arrow">&#x2B06;</section>
-            </button> */}
-            <h1 className="vote-count">8</h1>
-            <button className="arrows">
-              <section className="down-arrow">&#x2B07;</section>
-            </button>
-            <button className="comments">
-              <p>Comments</p>
-            </button>
-          </section>
-        </section>
-      </section>
-
-      {/* <section className="subreddit-body">
-        <section className="posts">
-          <section className="rectangles">
             <header className="title">Title</header>
             <button className="arrows">
               <section className="up-arrow">&#x2B06;</section>
@@ -74,24 +55,6 @@ const Subreddit = props => {
           </section>
         </section>
       </section>
-
-      <section className="subreddit-body">
-        <section className="posts">
-          <section className="rectangles">
-            <header className="title">Title</header>
-            <button className="arrows">
-              <section className="up-arrow">&#x2B06;</section>
-            </button>
-            <h1 className="vote-count">8</h1>
-            <button className="arrows">
-              <section className="down-arrow">&#x2B07;</section>
-            </button>
-            <button className="comments">
-              <p>Comments</p>
-            </button>
-          </section>
-        </section>
-      </section> */}
     </>
   )
 }

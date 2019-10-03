@@ -13,7 +13,12 @@ const NewPostPage = () => {
   const submitNewPost = async e => {
     e.preventDefault()
     const resp = await axios.post(`https://localhost:5001/api/Post`, post)
+    //setItem is a method
+    sessionStorage.setItem('token', resp.data)
     console.log('post form', resp.data)
+    if (resp.status === 200) {
+      window.location.replace('/Subreddit')
+    }
   }
 
   const updateForm = e => {
@@ -48,15 +53,22 @@ const NewPostPage = () => {
                 <input
                   id="content"
                   type="text"
-                  placeholder="Text"
+                  placeholder="Text (optional)"
                   onChange={updateForm}
                 />
               </div>
             </section>
 
             {/* submit form button */}
-            <button className="button" value="submit" name="action">
-              Submit
+            <button
+              className="button"
+              value="submit"
+              name="action"
+              onClick={e => {
+                submitNewPost()
+              }}
+            >
+              Post
             </button>
           </div>
         </form>
