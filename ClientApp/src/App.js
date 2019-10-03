@@ -20,8 +20,8 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/HomePage" component={HomePage}></Route>
             <Route exact path="/Subreddit" component={Subreddit}></Route>
+            <Route exact path="/Subreddit" component={Votes}></Route>
             <Route exact path="/NewPostPage" component={NewPostPage}></Route>
-            <Route exact path="/Votes" component={Votes}></Route>
             <Subreddit />
             <Community />
           </Switch>
