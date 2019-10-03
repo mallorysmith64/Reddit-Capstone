@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
 import Banner from './Banner'
+import Votes from './Votes'
 // import { Link } from 'react-router-dom'
 
 const Subreddit = props => {
@@ -35,6 +36,7 @@ const Subreddit = props => {
     <>
       <Nav />
       <Banner />
+      {/* <Votes id={2} /> */}
       <section className="subreddit-body">
         <section className="posts">
           <section className="rectangles">

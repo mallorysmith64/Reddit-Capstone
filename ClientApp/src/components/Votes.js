@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+// post voting
 const Votes = props => {
-  const [id] = useState(props.match.params.id)
+  const [id] = useState(props.postId)
   const [upVotes, setUpVotes] = useState({})
   // const [downVotes, setDownVotes] = useState({})
 
