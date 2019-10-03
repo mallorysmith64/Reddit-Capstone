@@ -76,7 +76,6 @@ namespace StackOverFlow.Controllers
       }
     }
 
-
     //update post
     [HttpPut("{id}")]
     public ActionResult<Post> Update(int id, [FromBody]Post newDetails)
@@ -90,14 +89,22 @@ namespace StackOverFlow.Controllers
       return newDetails;
     }
 
-    // todo: make a get request to actually get the upvotes
+    // get all votes before updating
+    [HttpGet("{id}/UpVote")]
+    public async Task<ActionResult> GetUpVotes(int id)
+    {
+      var upvotes = await context.Posts.FirstOrDefaultAsync(u => u.ID == id);
+      if (upvotes == null)
+      {
+        return NotFound();
+      }
+      else
+      {
+        return Ok(upvotes);
+      }
+    }
 
-
-
-
-
-
-    //update upvotes on posts
+    //update upvotes on posts/questions
     [HttpPatch("{id}/UpVote")]
     public ActionResult<Post> updateQuestionUpVote(int id)
     {
@@ -114,7 +121,7 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    //update downvotes on posts
+    //update downvotes on posts/questions
     [HttpPatch("{id}/DownVote")]
     public ActionResult<Post> updateQuestionDownVote(int id)
     {
