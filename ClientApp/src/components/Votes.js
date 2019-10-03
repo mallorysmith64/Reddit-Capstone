@@ -50,7 +50,7 @@ const Votes = props => {
       {/* <p>{downVotes}</p> */}
 
       {/* todo: put onclick event on upvotes and downvotes button */}
-      <button
+      {/* <button
         onClick={() => {
           setUpVotes()
         }}
@@ -58,7 +58,7 @@ const Votes = props => {
       >
         <section className="up-arrow">&#x2B06;</section>
       </button>
-      <h1 className="vote-count">8</h1>
+      <h1 className="vote-count">8</h1> */}
     </>
   )
 }
