@@ -36,20 +36,13 @@ const NewPostPage = () => {
                 id="title"
                 type="text"
                 placeholder="Title"
-                className="validate"
+                // className="validate"
                 onChange={updateForm}
               />
-              <label htmlFor="first_name"></label>
             </div>
-
-            {/* submit button */}
-            <button
-              className="btn waves-effect waves-light"
-              type="submit"
-              name="action"
-            >
-              <i className="material-icons right">send</i>
-              Done
+            {/* submit form button */}
+            <button className="button" value="submit" name="action">
+              Submit
             </button>
           </div>
         </form>
