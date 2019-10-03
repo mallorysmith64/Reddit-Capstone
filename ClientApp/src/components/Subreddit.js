@@ -43,7 +43,7 @@ const Subreddit = props => {
       <section className="subreddit-body">
         <section className="posts">
           <section className="rectangles">
-            <header className="title">Title : {post.Title || 'N/A'}</header>
+            <header className="title">Title : {post.title || 'N/A'}</header>
             {/* <button className="arrows">
               <section className="up-arrow">&#x2B06;</section>
             </button> */}

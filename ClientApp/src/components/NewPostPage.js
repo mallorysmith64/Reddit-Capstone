@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
+import Subreddit from './Subreddit'
 
 const NewPostPage = () => {
   const [post, setPost] = useState({
     title: '',
-    text: ''
+    content: ''
+    // comments: ''
   })
 
   const submitNewPost = async e => {
@@ -24,7 +26,7 @@ const NewPostPage = () => {
   return (
     <>
       <Nav />
-
+      {/* <Subreddit response={}/> */}
       <section className="contact-header">
         <h5 className="form-header">Create a Post</h5>
       </section>
@@ -36,10 +38,26 @@ const NewPostPage = () => {
                 id="title"
                 type="text"
                 placeholder="Title"
-                // className="validate"
                 onChange={updateForm}
               />
             </div>
+            <section className="form">
+              <form
+                action=""
+                className="col s12"
+                onSubmit={e => submitNewPost(e)}
+              >
+                <div className="input-field col s6">
+                  <input
+                    id="content"
+                    type="text"
+                    placeholder="Text"
+                    onChange={updateForm}
+                  />
+                </div>
+              </form>
+            </section>
+
             {/* submit form button */}
             <button className="button" value="submit" name="action">
               Submit
