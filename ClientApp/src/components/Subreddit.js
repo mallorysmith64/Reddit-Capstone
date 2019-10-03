@@ -6,15 +6,14 @@ import Banner from './Banner'
 // import { Link } from 'react-router-dom'
 
 const Subreddit = props => {
-  const [id] = useState(props.match.params.id)
   const [post, setPost] = useState({})
 
   // const [comment, setComment] = useState([])
 
   const getPost = async id => {
     const resp = await axios.get('https://localhost:5001/api/Post')
-    console.log('question response', resp)
-    console.log('get question', resp.data)
+    console.log('get this post response', resp)
+    console.log('get this post', resp.data)
     setPost(resp.data)
   }
 
@@ -26,9 +25,9 @@ const Subreddit = props => {
   // }
 
   useEffect(() => {
-    getPost(id)
-    // getComment(id)
-  }, [id])
+    getPost()
+    // getComment()
+  }, [])
 
   if (!post) return 'null'
   // if (!comment) return 'null'

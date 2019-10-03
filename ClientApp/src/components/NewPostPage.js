@@ -30,6 +30,7 @@ const NewPostPage = () => {
       <section className="contact-header">
         <h5 className="form-header">Create a Post</h5>
       </section>
+
       <section className="form">
         <form action="" className="col s12" onSubmit={e => submitNewPost(e)}>
           <div className="row">
@@ -41,21 +42,16 @@ const NewPostPage = () => {
                 onChange={updateForm}
               />
             </div>
+
             <section className="form">
-              <form
-                action=""
-                className="col s12"
-                onSubmit={e => submitNewPost(e)}
-              >
-                <div className="input-field col s6">
-                  <input
-                    id="content"
-                    type="text"
-                    placeholder="Text"
-                    onChange={updateForm}
-                  />
-                </div>
-              </form>
+              <div className="input-field col s6">
+                <input
+                  id="content"
+                  type="text"
+                  placeholder="Text"
+                  onChange={updateForm}
+                />
+              </div>
             </section>
 
             {/* submit form button */}
