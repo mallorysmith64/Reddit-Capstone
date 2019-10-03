@@ -106,9 +106,9 @@ namespace StackOverFlow.Controllers
 
     //update upvotes on posts/questions
     [HttpPatch("{id}/UpVote")]
-    public ActionResult<Post> updateQuestionUpVote(int id)
+    public async Task<ActionResult<Post>> updateQuestionUpVote(int id)
     {
-      var post = context.Posts.FirstOrDefault(q => q.ID == id);
+      var post = await context.Posts.FirstOrDefaultAsync(q => q.ID == id);
       if (post == null)
       {
         return NotFound();
