@@ -5,12 +5,12 @@ import Banner from './Banner'
 // import Votes from './Votes'
 // import { Link } from 'react-router-dom'
 
-const Subreddit = props => {
+const Subreddit = () => {
   const [post, setPost] = useState([])
 
   // const [comment, setComment] = useState([])
 
-  const getPost = async id => {
+  const getPost = async () => {
     const resp = await axios.get('https://localhost:5001/api/Post')
     console.log('get this post response', resp)
     console.log('get this post', resp.data)
@@ -29,20 +29,39 @@ const Subreddit = props => {
     // getComment()
   }, [])
 
-  if (!post) return 'null'
+  if (!post) return <></>
   // if (!comment) return 'null'
 
   return (
     <>
       <Nav />
       <Banner />
-      {post.map((name, key) => {
-        return (
-          <section key={key}>
-            <h5>{[name.title, name.content]}</h5>
+      <form className="subreddit-body">
+        <section className="posts">
+          <section className="rectangles">
+            <header className="title">
+              <div>
+                {post.map(post => (
+                  <div key={post.id}>
+                    {post.title}
+                    {/* {post.content} */}
+                  </div>
+                ))}
+              </div>
+            </header>
+            <button className="arrows">
+              <section className="up-arrow">&#x2B06;</section>
+            </button>
+            <h1 className="vote-count">8</h1>
+            <button className="arrows">
+              <section className="down-arrow">&#x2B07;</section>
+            </button>
+            <button className="comments">
+              <p>Comments</p>
+            </button>
           </section>
-        )
-      })}
+        </section>
+      </form>
     </>
   )
 }
@@ -57,23 +76,4 @@ export default Subreddit
 }
 {
   /* <Votes id={2} /> */
-}
-{
-  /* <section className="subreddit-body">
-  <section className="posts">
-    <section className="rectangles">
-      <header className="title">Title</header>
-      <button className="arrows">
-        <section className="up-arrow">&#x2B06;</section>
-      </button>
-      <h1 className="vote-count">8</h1>
-      <button className="arrows">
-        <section className="down-arrow">&#x2B07;</section>
-      </button>
-      <button className="comments">
-        <p>Comments</p>
-      </button>
-    </section>
-  </section>
-</section> */
 }
