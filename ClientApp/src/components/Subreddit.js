@@ -6,14 +6,14 @@ import Banner from './Banner'
 // import { Link } from 'react-router-dom'
 
 const Subreddit = () => {
-  const [post, setPost] = useState([])
+  const [posts, setPosts] = useState([])
   const [comment, setComment] = useState([])
 
   const getPost = async () => {
     const resp = await axios.get('https://localhost:5001/api/Post')
     console.log('get this post response', resp)
     console.log('get this post', resp.data)
-    setPost(resp.data)
+    setPosts(resp.data)
   }
 
   const getComment = async id => {
@@ -28,21 +28,22 @@ const Subreddit = () => {
     getComment()
   }, [])
 
-  if (!post) return <></>
+  if (!posts) return <></>
   if (!comment) return <></>
 
   return (
     <>
       <Nav />
       <Banner />
-      <form className="subreddit-body">
-        <section className="posts">
+      <section className="subreddit-body">
+        {/* className= "posts" creates the rectangles */}
+        <form className="posts">
           <section className="rectangles">
             <header className="title">
               <div>
-                {post.map(post => (
-                  <div key={post.id}>
-                    {post.title}
+                {posts.map(name => (
+                  <div key={name.id}>
+                    {name.title}
                     {/* {post.content} */}
                   </div>
                 ))}
@@ -59,8 +60,8 @@ const Subreddit = () => {
               <p>Comments</p>
             </button>
           </section>
-        </section>
-      </form>
+        </form>
+      </section>
     </>
   )
 }
