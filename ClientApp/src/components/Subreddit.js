@@ -6,7 +6,7 @@ import Banner from './Banner'
 // import { Link } from 'react-router-dom'
 
 const Subreddit = props => {
-  const [post, setPost] = useState({})
+  const [post, setPost] = useState([])
 
   // const [comment, setComment] = useState([])
 
@@ -36,27 +36,44 @@ const Subreddit = props => {
     <>
       <Nav />
       <Banner />
-      {/* putting votes here breaks everything */} {/* <Votes /> */}
-      {/* <Votes id={2} /> */}
-      <section className="subreddit-body">
-        <section className="posts">
-          <section className="rectangles">
-            <header className="title">Title</header>
-            <button className="arrows">
-              <section className="up-arrow">&#x2B06;</section>
-            </button>
-            <h1 className="vote-count">8</h1>
-            <button className="arrows">
-              <section className="down-arrow">&#x2B07;</section>
-            </button>
-            <button className="comments">
-              <p>Comments</p>
-            </button>
+      {post.map((name, key) => {
+        return (
+          <section key={key}>
+            <h5>{[name.title, name.content]}</h5>
           </section>
-        </section>
-      </section>
+        )
+      })}
     </>
   )
 }
 
 export default Subreddit
+
+{
+  /* putting votes here breaks everything */
+}
+{
+  /* <Votes /> */
+}
+{
+  /* <Votes id={2} /> */
+}
+{
+  /* <section className="subreddit-body">
+  <section className="posts">
+    <section className="rectangles">
+      <header className="title">Title</header>
+      <button className="arrows">
+        <section className="up-arrow">&#x2B06;</section>
+      </button>
+      <h1 className="vote-count">8</h1>
+      <button className="arrows">
+        <section className="down-arrow">&#x2B07;</section>
+      </button>
+      <button className="comments">
+        <p>Comments</p>
+      </button>
+    </section>
+  </section>
+</section> */
+}
