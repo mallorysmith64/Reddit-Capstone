@@ -7,8 +7,7 @@ import Banner from './Banner'
 
 const Subreddit = () => {
   const [post, setPost] = useState([])
-
-  // const [comment, setComment] = useState([])
+  const [comment, setComment] = useState([])
 
   const getPost = async () => {
     const resp = await axios.get('https://localhost:5001/api/Post')
@@ -17,20 +16,20 @@ const Subreddit = () => {
     setPost(resp.data)
   }
 
-  // const getComment = async id => {
-  //   const resp = await axios.get('https://localhost:5001/api/Comment')
-  //   console.log('comment response', resp)
-  //   console.log('get comment', resp.data)
-  //   setComment(resp.data)
-  // }
+  const getComment = async id => {
+    const resp = await axios.get('https://localhost:5001/api/Comment')
+    console.log('comment response', resp)
+    console.log('get comment', resp.data)
+    setComment(resp.data)
+  }
 
   useEffect(() => {
     getPost()
-    // getComment()
+    getComment()
   }, [])
 
   if (!post) return <></>
-  // if (!comment) return 'null'
+  if (!comment) return <></>
 
   return (
     <>
@@ -66,14 +65,8 @@ const Subreddit = () => {
   )
 }
 
-export default Subreddit
+// {
+//   <Votes id={2} />
+// }
 
-{
-  /* putting votes here breaks everything */
-}
-{
-  /* <Votes /> */
-}
-{
-  /* <Votes id={2} /> */
-}
+export default Subreddit

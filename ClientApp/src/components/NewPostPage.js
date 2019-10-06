@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
-import Subreddit from './Subreddit'
+// import Subreddit from './Subreddit'
 
 const NewPostPage = () => {
   const [post, setPost] = useState({
