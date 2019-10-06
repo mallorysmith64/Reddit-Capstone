@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 /*todo: add onclick for comment button
 after user clicks, comment section should open
-comments have: upvotes, downvotes, username, title, nested comments,
-PostedBy, and timePassed*/
+comments have: ID, UpVotes, DownVotes, User, Comments,
+PostedBy, PostID, reference to the post table, and TimePassed*/
 
 class Comments extends Component {
   render() {
