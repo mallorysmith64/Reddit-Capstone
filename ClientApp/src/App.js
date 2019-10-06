@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Community from './components/Community'
 
 import Subreddit from './components/Subreddit'
+import Comments from './components/Comments'
 import NewPostPage from './components/NewPostPage'
 import HomePage from './components/HomePage'
 
@@ -19,6 +20,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/HomePage" component={HomePage}></Route>
             <Route exact path="/Subreddit" component={Subreddit}></Route>
+            <Route exact path="/Comments" component={Comments}></Route>
             <Route exact path="/NewPostPage" component={NewPostPage}></Route>
             <Subreddit />
             <Community />
