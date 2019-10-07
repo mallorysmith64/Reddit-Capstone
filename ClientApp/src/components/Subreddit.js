@@ -40,14 +40,14 @@ const Subreddit = () => {
         <form className="posts">
           <section className="rectangles">
             <header className="title">
-              <div>
+              <ul>
                 {posts.map(name => (
-                  <div key={name.id}>
+                  <li className="" key={name.id}>
                     {name.title}
                     {/* {post.content} */}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </header>
             <button className="arrows">
               <section className="up-arrow">&#x2B06;</section>
