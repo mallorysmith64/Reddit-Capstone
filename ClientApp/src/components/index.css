@@ -123,17 +123,19 @@ nav {
   line-height: 1.3em;
 }
 
-/* positions rectangles */
-.subreddit-body {
+/* gray background*/
+.body-background {
   background-color: #dae0e6;
-  padding: 2em 30em 2em 10em;
-  /* z-index: -1; */
+  padding: 2em 5em 2em 5em;
 }
 
-/* creates rectangles */
-.posts {
-  margin: 0;
-  padding: 1em;
+.between-posts {
+  background-color: #dae0e6;
+  padding: 0.2em;
+}
+
+/* creates gray and white rectangles */
+.white-rectangles {
   background: white;
 }
 
@@ -141,6 +143,12 @@ nav {
   display: flex;
   padding-left: 2em;
 }
+
+/* 
+.each-post {
+  display: flex;
+  flex-direction: column;
+} */
 
 .comments {
   border: 0.1em solid;

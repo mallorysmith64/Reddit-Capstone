@@ -35,30 +35,32 @@ const Subreddit = () => {
     <>
       <Nav />
       <Banner />
-      <section className="subreddit-body">
-        {/* className= "posts" creates the rectangles */}
-        <form className="posts">
-          <header className="title">
-            <ul>
-              {posts.map(name => (
-                <li className="" key={name.id}>
-                  {name.title}
-                  {/* {post.content} */}
+      {/* className= "posts" creates the rectangles */}
+      <section className="body-background">
+        {/* <form className="rectangles"> */}
+        <header className="title">
+          <ul className="each-post">
+            {posts.map(name => (
+              <li className="white-rectangles" key={name.id}>
+                {name.title}
+                <li className="white-rectangles" key={name.id}>
+                  {name.content}
                 </li>
-              ))}
-            </ul>
-          </header>
-          <button className="arrows">
-            <section className="up-arrow">&#x2B06;</section>
-          </button>
-          <h1 className="vote-count">8</h1>
-          <button className="arrows">
-            <section className="down-arrow">&#x2B07;</section>
-          </button>
-          <button className="comments">
-            <p>Comments</p>
-          </button>
-        </form>
+                <button className="arrows">
+                  <section className="up-arrow">&#x2B06;</section>
+                </button>
+                <h1 className="vote-count">8</h1>
+                <button className="arrows">
+                  <section className="down-arrow">&#x2B07;</section>
+                </button>
+                <button className="comments">
+                  <p>Comments</p>
+                </button>
+                <li className="between-posts"></li>
+              </li>
+            ))}
+          </ul>
+        </header>
       </section>
     </>
   )
