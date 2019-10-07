@@ -6,6 +6,7 @@ import Subreddit from './components/Subreddit'
 import Comments from './components/Comments'
 import NewPostPage from './components/NewPostPage'
 import HomePage from './components/HomePage'
+// import ChangeColors from './components/ChangeColors'
 
 import 'bulma/css/bulma.css'
 import './components/index.css'
@@ -19,6 +20,7 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/HomePage" component={HomePage}></Route>
+            {/* <Route exact path="/ChangeColors" component={ChangeColors}></Route> */}
             <Route exact path="/Subreddit" component={Subreddit}></Route>
             <Route exact path="/Comments" component={Comments}></Route>
             <Route exact path="/NewPostPage" component={NewPostPage}></Route>

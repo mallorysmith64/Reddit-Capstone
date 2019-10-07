@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
+// import ChangeColors from './ChangeColors'
 import { Link } from 'react-router-dom'
 // import NewPostPage from './NewPostPage'
 
@@ -67,6 +68,29 @@ const Nav = () => {
         <button className="search-glass-button">
           <i className="fas fa-search"></i>
         </button>
+
+        {/* second dropdown menu, copy of the first one */}
+        {/* <div className="dropdown is-hoverable">
+          <div className="dropdown-trigger">
+            <Link to="/SubredditBody">
+              <button
+                className="subreddit-dropdown"
+                aria-haspopup="true"
+                aria-controls="dropdown-menu"
+              >
+                Color Picker
+                <i className="fas fa-caret-down"></i>
+              </button>
+            </Link>
+          </div>
+          <div className="dropdown-menu" id="dropdown-menu" role="menu">
+            <div className="dropdown-content">
+              <Link to="/Subreddit" className="dropdown-item">
+                Color Palette
+              </Link>
+            </div>
+          </div>
+        </div> */}
 
         {/* post button */}
         <Link to="/NewPostPage">
