@@ -131,23 +131,22 @@ nav {
 
 .between-posts {
   background-color: #dae0e6;
+  /* height between posts is the padding */
   padding: 0.2em;
 }
 
-/* creates gray and white rectangles */
 .white-rectangles {
   background: white;
+  width: 30em;
 }
 
 .title {
   display: flex;
   padding-left: 2em;
 }
-
 /* 
 .each-post {
-  display: flex;
-  flex-direction: column;
+ 
 } */
 
 .comments {
