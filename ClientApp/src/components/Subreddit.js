@@ -38,28 +38,26 @@ const Subreddit = () => {
       <section className="subreddit-body">
         {/* className= "posts" creates the rectangles */}
         <form className="posts">
-          <section className="rectangles">
-            <header className="title">
-              <ul>
-                {posts.map(name => (
-                  <li className="" key={name.id}>
-                    {name.title}
-                    {/* {post.content} */}
-                  </li>
-                ))}
-              </ul>
-            </header>
-            <button className="arrows">
-              <section className="up-arrow">&#x2B06;</section>
-            </button>
-            <h1 className="vote-count">8</h1>
-            <button className="arrows">
-              <section className="down-arrow">&#x2B07;</section>
-            </button>
-            <button className="comments">
-              <p>Comments</p>
-            </button>
-          </section>
+          <header className="title">
+            <ul>
+              {posts.map(name => (
+                <li className="" key={name.id}>
+                  {name.title}
+                  {/* {post.content} */}
+                </li>
+              ))}
+            </ul>
+          </header>
+          <button className="arrows">
+            <section className="up-arrow">&#x2B06;</section>
+          </button>
+          <h1 className="vote-count">8</h1>
+          <button className="arrows">
+            <section className="down-arrow">&#x2B07;</section>
+          </button>
+          <button className="comments">
+            <p>Comments</p>
+          </button>
         </form>
       </section>
     </>
