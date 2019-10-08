@@ -22,7 +22,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/HomePage" component={HomePage}></Route>
             {/* <Route exact path="/ChangeColors" component={ChangeColors}></Route> */}
-            {/* <Route exact path="/Votes" component={Votes}></Route> */}
+            <Route exact path="/Votes" component={Votes}></Route>
             <Route exact path="/Subreddit" component={Subreddit}></Route>
             <Route exact path="/Comments" component={Comments}></Route>
             <Route exact path="/NewPostPage" component={NewPostPage}></Route>
