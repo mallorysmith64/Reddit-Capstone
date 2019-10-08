@@ -2,33 +2,32 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState('hound')
+  const [searchTerm, setSearchTerm] = useState('')
 
-  const fetchData = async () => {
+  const getSearchTerm = async () => {
     const resp = await axios.get(`https://localhost:5001/api/Post/{id}`)
     console.log('I am here', resp.data)
     setSearchTerm(resp.data)
   }
 
   useEffect(() => {
-    fetchData()
+    getSearchTerm()
   }, [])
 
   return (
     <>
-      <main>
-        <section>
-          <input
-            type="search"
-            className="search-box"
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-          />
-          <button className="search-button" onClick={fetchData}>
-            <i className="fas fa-search fa-flip-horizontal "></i>SEARCH
-          </button>
-        </section>
-      </main>
+      <section className="search-container">
+        <input
+          type="search"
+          className="search-box"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+        />
+      </section>
+      <button className="search-glass-button" onClick={getSearchTerm}>
+        <i className="fas fa-search"></i>
+      </button>
     </>
   )
 }

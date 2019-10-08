@@ -4,9 +4,11 @@ import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
 // import ChangeColors from './ChangeColors'
 import { Link } from 'react-router-dom'
+import SearchBar from './SearchBar'
 
 const Nav = () => {
   const [searchTerm, setSearchTerm] = useState('')
+
   return (
     <>
       <nav className="navbar">
@@ -52,7 +54,8 @@ const Nav = () => {
           </div>
         </div>
 
-        <section className="search-container">
+        <SearchBar />
+        {/* <section className="search-container">
           <input
             type="search"
             className="search-box"
@@ -63,7 +66,7 @@ const Nav = () => {
         </section>
         <button className="search-glass-button">
           <i className="fas fa-search"></i>
-        </button>
+        </button> */}
 
         {/* second dropdown menu, copy of the first one */}
         {/* <div className="dropdown is-hoverable">

@@ -16,7 +16,7 @@ const Subreddit = () => {
     setPosts(resp.data)
   }
 
-  const getComment = async id => {
+  const getComment = async () => {
     const resp = await axios.get('https://localhost:5001/api/Comment')
     console.log('comment response', resp)
     console.log('get comment', resp.data)
