@@ -32,6 +32,16 @@ namespace StackOverFlow.Controllers
       return entry;
     }
 
+    //post only one piece of content
+    [HttpPost("{id}")]
+    public async Task<ActionResult<Post>> PostOne([FromBody]Post entry)
+    {
+      //put await when adding and saving
+      await context.Posts.AddAsync(entry);
+      await context.SaveChangesAsync();
+      return entry;
+    }
+
     //get all posts
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> GetAllPosts()

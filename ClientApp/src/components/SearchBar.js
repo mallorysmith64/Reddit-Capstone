@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+// import SearchResults from './SearchResults'
 
 const SearchBar = props => {
   const [id] = useState(props.id)
@@ -8,7 +9,7 @@ const SearchBar = props => {
   const getSearchTerm = async id => {
     const resp = await axios.get(`https://localhost:5001/api/Post/${id}`)
     console.log('I am here', resp.data)
-    setSearchTerm(resp.data)
+    props.updateResult(resp.data)
   }
 
   useEffect(() => {
@@ -28,9 +29,13 @@ const SearchBar = props => {
           onChange={e => setSearchTerm(e.target.value)}
         />
       </section>
-      <button className="search-glass-button" onClick={() => getSearchTerm(id)}>
+      <button
+        className="search-glass-button"
+        onClick={() => getSearchTerm(searchTerm)}
+      >
         <i className="fas fa-search"></i>
       </button>
+      {/* <SearchResults /> */}
     </>
   )
 }

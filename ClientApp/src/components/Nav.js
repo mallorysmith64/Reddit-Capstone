@@ -7,7 +7,7 @@ import DefaultAvatar from './images/reddit_default_avatar.png'
 /*todo: make SearchResult component 
 aka do a post request to display search results*/
 
-import SearchResult from './SearchResult'
+import SearchResult from './SearchResults'
 
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
