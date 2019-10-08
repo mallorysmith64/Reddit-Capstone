@@ -90,7 +90,7 @@ namespace StackOverFlow.Controllers
     }
 
     // get all votes before updating
-    [HttpGet("{id}/UpVote")]
+    [HttpGet("{id}/Votes")]
     public async Task<ActionResult> GetUpVotes(int id)
     {
       var upvotes = await context.Posts.FirstOrDefaultAsync(u => u.ID == id);

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
-import Votes from './Votes'
 // import Subreddit from './Subreddit'
 
 const NewPostPage = () => {

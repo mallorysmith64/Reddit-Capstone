@@ -9,14 +9,15 @@ const Votes = props => {
   const [votes, setVotes] = useState(0)
 
   const getVotes = async id => {
-    const resp = await axios.get(`https://localhost:5001/api/Post/${id}/UpVote`)
+    const resp = await axios.get(`https://localhost:5001/api/Post/${id}/Votes`)
     console.log(getVotes)
     console.log('get votes response', resp)
-    console.log('received upvotes', resp.data)
+    console.log('received votes', resp.data)
     // setUpVotes(resp.data)
     setMapID(resp.data)
   }
 
+  //stephen's map function
   const mapping = () => {
     const nMap = mapID.map(l => l.ID)
     console.log(nMap)
@@ -25,7 +26,8 @@ const Votes = props => {
 
   const IncreaseVote = async id => {
     const resp = await axios.patch(
-      `https://localhost:5001/api/Post/${id}/UpVote`
+      `https://localhost:5001/api/Post/${id}/UpVote`,
+      { id }
     )
     console.log(IncreaseVote)
     console.log('upvotes response', resp)
@@ -35,11 +37,11 @@ const Votes = props => {
 
   const DecreaseVote = async id => {
     const resp = await axios.patch(
-      `https://localhost:5001/api/Post/${id}/UpVote`
+      `https://localhost:5001/api/Post/${id}/DownVote`
     )
     console.log(DecreaseVote)
-    console.log('upvotes response', resp)
-    console.log('upvotes', resp.data)
+    console.log('downvotes response', resp)
+    console.log('downvotes', resp.data)
     setVotes(resp.data)
   }
 
@@ -53,10 +55,10 @@ const Votes = props => {
     <>
       {/* <button
         onClick={() => {
-          setUpVotes()
+          setVotes()
         }}
       > */}
-      <button className="arrows" onclick={() => IncreaseVote()}>
+      <button className="arrows" onClick={() => IncreaseVote()}>
         <section className="up-arrow">&#x2B06;</section>
       </button>
 
@@ -64,7 +66,9 @@ const Votes = props => {
       <button className="arrows" onClick={() => DecreaseVote()}>
         <section className="down-arrow">&#x2B07;</section>
       </button>
-      <button onClick={() => mapping()}> </button>
+
+      {/* stephen's button for map function */}
+      <button onClick={() => mapping()}> I'm here, yo</button>
     </>
   )
 }
