@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
+import Votes from './Votes'
 
 const HomePage = () => {
   const [posts, setPosts] = useState([])
@@ -42,13 +43,10 @@ const HomePage = () => {
                 <li className="white-rectangles" key={name.id}>
                   {name.content}
                 </li>
-                <button className="arrows">
-                  <section className="up-arrow">&#x2B06;</section>
-                </button>
-                <h1 className="vote-count">8</h1>
-                <button className="arrows">
-                  <section className="down-arrow">&#x2B07;</section>
-                </button>
+
+                {/* calling vote component, passing id*/}
+                <Votes id={name.id} />
+
                 <button className="comments">
                   <p>Comments</p>
                 </button>

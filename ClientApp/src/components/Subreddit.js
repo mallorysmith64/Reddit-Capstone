@@ -47,7 +47,7 @@ const Subreddit = () => {
                   {name.content}
                 </li>
 
-                {/* vote component aka arrows and functionality goes here*/}
+                {/* calling vote component, passing id*/}
                 <Votes id={name.id} />
 
                 <button className="comments">
@@ -59,13 +59,8 @@ const Subreddit = () => {
           </ul>
         </header>
       </section>
-      <Votes />
     </>
   )
 }
-
-// {
-//   <Votes id={2} />
-// }
 
 export default Subreddit

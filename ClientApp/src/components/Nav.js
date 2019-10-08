@@ -4,7 +4,6 @@ import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
 // import ChangeColors from './ChangeColors'
 import { Link } from 'react-router-dom'
-// import NewPostPage from './NewPostPage'
 
 const Nav = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -43,12 +42,9 @@ const Nav = () => {
               <Link to="/HomePage" className="dropdown-item">
                 Home
               </Link>
+
               {/* link is seen as an a tag, having an a tag within an a tag is NOT allowed */}
-              {/* <Link to="/HomePage">
-                <a href="/#" className="dropdown-item">
-                  Home
-                </a>
-              </Link> */}
+
               <Link to="/Subreddit" className="dropdown-item">
                 Subreddit
               </Link>
