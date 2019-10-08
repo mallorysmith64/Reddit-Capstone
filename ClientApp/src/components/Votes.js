@@ -3,8 +3,7 @@ import axios from 'axios'
 
 // state for upvotes, downvotes
 const Votes = props => {
-  // const [id] = useState(props.postId)
-  const [id] = useState()
+  const [id] = useState(props.id)
   const [mapID, setMapID] = useState([])
   const [votes, setVotes] = useState(0)
 
@@ -13,15 +12,7 @@ const Votes = props => {
     console.log(getVotes)
     console.log('get votes response', resp)
     console.log('received votes', resp.data)
-    // setUpVotes(resp.data)
-    setMapID(resp.data)
-  }
-
-  //stephen's map function
-  const mapping = () => {
-    const nMap = mapID.map(l => l.ID)
-    console.log(nMap)
-    return nMap
+    setVotes(resp.data.upVote - resp.data.downVote)
   }
 
   const IncreaseVote = async id => {
@@ -32,7 +23,7 @@ const Votes = props => {
     console.log(IncreaseVote)
     console.log('upvotes response', resp)
     console.log('upvotes', resp.data)
-    setVotes(resp.data)
+    setVotes(resp.data.upVote - resp.data.downVote)
   }
 
   const DecreaseVote = async id => {
@@ -42,13 +33,13 @@ const Votes = props => {
     console.log(DecreaseVote)
     console.log('downvotes response', resp)
     console.log('downvotes', resp.data)
-    setVotes(resp.data)
+    setVotes(resp.data.upVote - resp.data.downVote)
   }
 
   useEffect(() => {
-    getVotes(id)
-    IncreaseVote(id)
-    DecreaseVote(id)
+    if (id) {
+      getVotes(id)
+    }
   }, [id])
 
   return (
@@ -58,17 +49,14 @@ const Votes = props => {
           setVotes()
         }}
       > */}
-      <button className="arrows" onClick={() => IncreaseVote()}>
+      <button className="arrows" onClick={() => IncreaseVote(id)}>
         <section className="up-arrow">&#x2B06;</section>
       </button>
 
       <p className="vote-count">{votes}</p>
-      <button className="arrows" onClick={() => DecreaseVote()}>
+      <button className="arrows" onClick={() => DecreaseVote(id)}>
         <section className="down-arrow">&#x2B07;</section>
       </button>
-
-      {/* stephen's button for map function */}
-      <button onClick={() => mapping()}> I'm here, yo</button>
     </>
   )
 }

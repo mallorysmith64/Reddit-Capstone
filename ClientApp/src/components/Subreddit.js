@@ -48,7 +48,7 @@ const Subreddit = () => {
                 </li>
 
                 {/* vote component aka arrows and functionality goes here*/}
-                <Votes />
+                <Votes id={name.id} />
 
                 <button className="comments">
                   <p>Comments</p>
