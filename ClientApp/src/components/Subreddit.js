@@ -42,7 +42,7 @@ const Subreddit = () => {
         <header className="title">
           <ul className="each-post">
             {posts.map(name => (
-              <li className="white-rectangles" key={name.id}>
+              <h2 className="white-rectangles" key={name.id}>
                 {name.title}
                 <li className="white-rectangles" key={name.id}>
                   {name.content}
@@ -55,7 +55,7 @@ const Subreddit = () => {
                   <p>Comments</p>
                 </button>
                 <li className="between-posts"></li>
-              </li>
+              </h2>
             ))}
           </ul>
         </header>
