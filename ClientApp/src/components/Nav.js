@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
 // import ChangeColors from './ChangeColors'
+
+/*todo: make SearchResult component 
+aka do a post request to display search results*/
+
+import SearchResult from './SearchResult'
+
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 
 const Nav = () => {
+  const [searchResult, setSearchResult] = useState(null)
+
   return (
     <>
       <nav className="navbar">
@@ -52,7 +60,9 @@ const Nav = () => {
           </div>
         </div>
 
-        <SearchBar />
+        <SearchBar updateResult={setSearchResult} />
+        <SearchResult results={searchResult} />
+
         {/* <section className="search-container">
           <input
             type="search"
