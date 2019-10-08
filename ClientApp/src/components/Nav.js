@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 
 const Nav = () => {
-  const [searchTerm, setSearchTerm] = useState('')
-
   return (
     <>
       <nav className="navbar">

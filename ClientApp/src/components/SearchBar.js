@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const SearchBar = () => {
+const SearchBar = props => {
+  const [id] = useState(props.id)
   const [searchTerm, setSearchTerm] = useState('')
 
-  const getSearchTerm = async () => {
-    const resp = await axios.get(`https://localhost:5001/api/Post/{id}`)
+  const getSearchTerm = async id => {
+    const resp = await axios.get(`https://localhost:5001/api/Post/${id}`)
     console.log('I am here', resp.data)
     setSearchTerm(resp.data)
   }
 
   useEffect(() => {
-    getSearchTerm()
-  }, [])
+    if (id) {
+      getSearchTerm(id)
+    }
+  }, [id])
 
   return (
     <>
@@ -25,7 +28,7 @@ const SearchBar = () => {
           onChange={e => setSearchTerm(e.target.value)}
         />
       </section>
-      <button className="search-glass-button" onClick={getSearchTerm}>
+      <button className="search-glass-button" onClick={() => getSearchTerm(id)}>
         <i className="fas fa-search"></i>
       </button>
     </>

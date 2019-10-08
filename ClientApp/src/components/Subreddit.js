@@ -3,6 +3,7 @@ import axios from 'axios'
 import Nav from './Nav'
 import Banner from './Banner'
 import Votes from './Votes'
+// import SearchBar from './SearchBar'
 // import { Link } from 'react-router-dom'
 
 const Subreddit = () => {
