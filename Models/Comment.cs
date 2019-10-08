@@ -8,7 +8,10 @@ namespace StackOverFlow.Models
     //comments table
     public int ID { get; set; }
     public int UpVote { get; set; }
+    //1 store upvotes and down votes as a single number
+    //2 on the front end increment then send changed value back
     public int DownVote { get; set; }
+    //remove downvotes
     public string PostedBy { get; set; }
     public DateTime TimePassed { get; set; } = DateTime.Now;
     public string Comments { get; set; }

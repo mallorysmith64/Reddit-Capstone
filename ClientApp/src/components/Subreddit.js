@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
 import Banner from './Banner'
-// import Votes from './Votes'
+import Votes from './Votes'
 // import { Link } from 'react-router-dom'
 
 const Subreddit = () => {
@@ -46,13 +46,10 @@ const Subreddit = () => {
                 <li className="white-rectangles" key={name.id}>
                   {name.content}
                 </li>
-                <button className="arrows">
-                  <section className="up-arrow">&#x2B06;</section>
-                </button>
-                <h1 className="vote-count">8</h1>
-                <button className="arrows">
-                  <section className="down-arrow">&#x2B07;</section>
-                </button>
+
+                {/* vote component aka arrows and functionality goes here*/}
+                <Votes />
+
                 <button className="comments">
                   <p>Comments</p>
                 </button>
@@ -62,6 +59,7 @@ const Subreddit = () => {
           </ul>
         </header>
       </section>
+      <Votes />
     </>
   )
 }
