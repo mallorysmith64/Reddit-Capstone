@@ -22,7 +22,7 @@ export default class App extends Component {
       <>
         <Router>
           <Switch>
-            <Route exact path="/HomePage" component={HomePage}></Route>
+            <Route exact path="/" component={HomePage}></Route>
             {/* <Route exact path="/ChangeColors" component={ChangeColors}></Route> */}
             {/* <Route exact path="/SearchBar" component={SearchBar}></Route>
             <Route
