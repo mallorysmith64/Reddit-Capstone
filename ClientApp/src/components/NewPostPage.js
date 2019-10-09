@@ -16,6 +16,7 @@ const NewPostPage = () => {
     //setItem is a method
     sessionStorage.setItem('token', resp.data)
     console.log('post form', resp.data)
+    //redirects to subreddit page
     if (resp.status === 200) {
       window.location.replace('/Subreddit')
     }

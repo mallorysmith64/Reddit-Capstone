@@ -7,10 +7,10 @@ import DefaultAvatar from './images/reddit_default_avatar.png'
 /*todo: make SearchResult component 
 aka do a post request to display search results*/
 
-import SearchResult from './SearchResults'
+// import SearchResult from './SearchResults'
+// import SearchBar from './SearchBar'
 
 import { Link } from 'react-router-dom'
-import SearchBar from './SearchBar'
 
 const Nav = () => {
   const [searchResult, setSearchResult] = useState(null)
@@ -60,8 +60,8 @@ const Nav = () => {
           </div>
         </div>
 
-        <SearchBar updateResult={setSearchResult} />
-        <SearchResult results={searchResult} />
+        {/* <SearchBar updateResult={setSearchResult} />
+        <SearchResult results={searchResult} /> */}
 
         {/* <section className="search-container">
           <input
