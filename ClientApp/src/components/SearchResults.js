@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const SearchResults = props => {
   const [id] = useState(props.id)
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState([])
 
   const postSearchTerm = async id => {
     const resp = await axios.post(`https://localhost:5001/api/Post/${id}`)

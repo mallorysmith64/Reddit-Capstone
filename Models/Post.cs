@@ -8,6 +8,7 @@ namespace StackOverFlow.Models
   public class Post
   {
     public int ID { get; set; }
+    public string SearchTerm { get; set; }
     public int UpVote { get; set; }
     public int DownVote { get; set; }
     public string PostedBy { get; set; }
