@@ -67,15 +67,6 @@ namespace StackOverFlow.Controllers
       }
     }
 
-    // // //get search terms first
-    // [HttpGet("search/{searchTerm}")]
-    // //get a list of posts based off a string instead of a number/the id
-    // public async Task<ActionResult<IEnumerable<Post>>> SearchPosts(string query)
-    // {
-    //   var results = context.Posts.Where(result => searchTerm);
-    //   return await results.ToListAsync();
-    // }
-
     //post comments
     [HttpPost("{postId}/comments")]
     public ActionResult<Comment> CreateComment(int postId, [FromBody]Comment comment)
