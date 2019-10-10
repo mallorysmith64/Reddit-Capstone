@@ -124,13 +124,12 @@ nav {
   line-height: 1.3em;
 }
 
-/* gray background*/
+/* gray background
 .body-background {
   /* background-color: #dae0e6; */
-  padding: 2em 5em 2em 5em;
-}
+/* padding: 2em 5em 2em 5em; */
 
-.between-posts {
+*/ .between-posts {
   background-color: #dae0e6;
   /* height between posts is the padding */
   padding: 0.2em;
@@ -213,6 +212,7 @@ nav {
 .contact-header {
   display: flex;
   padding-left: 2em;
+  padding-top: 2em;
 }
 
 .form-header {
