@@ -124,12 +124,14 @@ nav {
   line-height: 1.3em;
 }
 
-/* gray background
+/* gray background */
 .body-background {
-  /* background-color: #dae0e6; */
-/* padding: 2em 5em 2em 5em; */
+  background-color: #dae0e6;
+  padding: 2em 5em 2em 5em;
+}
 
-*/ .between-posts {
+/* gray color between each post */
+.between-posts {
   background-color: #dae0e6;
   /* height between posts is the padding */
   padding: 0.2em;
@@ -144,11 +146,6 @@ nav {
   display: flex;
   padding-left: 2em;
 }
-
-/* 
-.each-post {
- 
-} */
 
 .comments {
   border: 0.1em solid;
@@ -204,10 +201,6 @@ nav {
 }
 
 /* newpostpage component css */
-
-/* .new-post-background {
-  background-color: green;
-} */
 
 .contact-header {
   display: flex;
