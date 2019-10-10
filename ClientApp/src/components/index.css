@@ -233,3 +233,14 @@ nav {
   justify-content: center;
   padding: 1em 0em 0em 8em;
 }
+
+/* search page css */
+
+.search-header-container {
+  padding: 2em;
+  font-size: 1.5em;
+}
+
+.search-header {
+  font-weight: bold;
+}

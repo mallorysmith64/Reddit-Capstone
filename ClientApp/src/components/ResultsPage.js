@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
-import Banner from './Banner'
 import Votes from './Votes'
 // import SearchBar from './SearchBar'
 // import { Link } from 'react-router-dom'
 
-const Subreddit = () => {
-  // const [postResp] = useState([])
+const ResultsPage = () => {
+  const [postResp] = useState([])
   const [posts, setPosts] = useState([])
   const [comment, setComment] = useState([])
 
@@ -37,6 +36,7 @@ const Subreddit = () => {
     <>
       <Nav />
       <Banner />
+      {postResp.length > 0 && (
       <section className="body-background">
         <header className="title">
           <ul className="each-post">
@@ -56,13 +56,14 @@ const Subreddit = () => {
                 </button>
                 <li className="between-posts"></li>
               </h2>
-            ))}
+            )
+            )}}
           </ul>
-          {/* {postResp.length === 0 && <h5>No Posts Were Found</h5>} */}
+          {postResp.length === 0 && <h5>No Posts Were Found</h5>}
         </header>
       </section>
     </>
   )
 }
 
-export default Subreddit
+export default ResultsPage

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import SearchResults from './SearchResults'
+// import ResultsPage from './ResultsPage'
 
 const SearchBar = props => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -34,6 +34,7 @@ const SearchBar = props => {
       >
         <i className="fas fa-search"></i>
       </button>
+      {/* <ResultsPage /> */}
     </>
   )
 }
