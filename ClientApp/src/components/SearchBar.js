@@ -3,40 +3,17 @@ import axios from 'axios'
 // import SearchResults from './SearchResults'
 
 const SearchBar = props => {
-  // I do not only want numbers to work: const [id] = useState(props.id)
-  //can you pass query instead of id
-  const [searchTerm, setSearchTerm] = useState({
-    // searchResp: [],
-    // search: {
-    PostedBy: '',
-    Title: '',
-    Content: '',
-    TimePassed: ''
-  })
+  const [searchTerm, setSearchTerm] = useState('')
 
-  // }
-
-  // const getSearchTerm = async e => {
   const getSearchTerm = async searchTerm => {
-    // e.preventDefault()
-    // if (searchTerm) {
     const resp = await axios.get(`/api/Search/searchTerm?query=${searchTerm}`)
     console.log('get search term works', resp)
     props.updateResult(resp.data.results)
-    // }
   }
-
-  // const postSearchTerm = async searchTerm => {
-  //   const resp = axios.post(`/api/Search/searchTerm?query=${searchTerm}`)
-  //   console.log('post search term works', resp)
-  //   props.updateResult(resp.data)
-  //   // setSearchTerm(resp.data)
-  // }
 
   useEffect(() => {
     if (searchTerm) {
       getSearchTerm(searchTerm)
-      // postSearchTerm(searchTerm)
     }
   }, [searchTerm])
 
@@ -57,7 +34,6 @@ const SearchBar = props => {
       >
         <i className="fas fa-search"></i>
       </button>
-      {/* <SearchResults /> */}
     </>
   )
 }
