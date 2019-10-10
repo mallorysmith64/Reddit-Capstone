@@ -202,3 +202,26 @@ nav {
 .card-footer-item:hover {
   color: white;
 }
+
+/* newpostpage component css */
+
+.contact-header {
+  display: flex;
+  padding-left: 2em;
+}
+
+.form-header {
+  font-weight: bold;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 18em;
+}
+
+.post-button {
+  display: flex;
+  padding-left: 13em;
+}

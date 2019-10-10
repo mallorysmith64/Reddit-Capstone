@@ -32,35 +32,31 @@ const NewPostPage = () => {
   return (
     <>
       <Nav />
-      {/* <Subreddit response={}/> */}
       <section className="contact-header">
-        <h5 className="form-header">Create a Post</h5>
+        <h5 className="form-header">Create a post</h5>
       </section>
 
       <section className="form">
         <form action="" className="col s12" onSubmit={e => submitNewPost(e)}>
-          <div className="row">
-            <div className="input-field col s6">
-              <input
-                id="title"
-                type="text"
-                placeholder="Title"
-                onChange={updateForm}
-              />
-            </div>
-
-            <section className="form">
-              <div className="input-field col s6">
-                <input
-                  id="content"
-                  type="text"
-                  placeholder="Text (optional)"
-                  onChange={updateForm}
-                />
-              </div>
-            </section>
+          <div className="input-field col s6">
+            <input
+              id="title"
+              type="text"
+              placeholder="Title"
+              onChange={updateForm}
+            />
 
             {/* submit form button */}
+          </div>
+          <div className="input-field col s6">
+            <input
+              id="content"
+              type="text"
+              placeholder="Text (optional)"
+              onChange={updateForm}
+            />
+          </div>
+          <section className="post-button">
             <button
               className="button"
               value="submit"
@@ -71,7 +67,7 @@ const NewPostPage = () => {
             >
               Post
             </button>
-          </div>
+          </section>
         </form>
       </section>
     </>
