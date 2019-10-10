@@ -8,7 +8,7 @@ import DefaultAvatar from './images/reddit_default_avatar.png'
 aka do a post request to display search results*/
 
 // import SearchResult from './SearchResults'
-// import SearchBar from './SearchBar'
+import SearchBar from './SearchBar'
 
 import { Link } from 'react-router-dom'
 
@@ -22,7 +22,6 @@ const Nav = () => {
           <img src={RedditIcon} alt="reddit icon" width="30" height="30" />
           <h1 className="reddit-text">reddit</h1>
         </section>
-
         <div className="dropdown is-hoverable">
           <div className="dropdown-trigger">
             <Link to="/SubredditBody">
@@ -59,10 +58,8 @@ const Nav = () => {
             </div>
           </div>
         </div>
-
-        {/* <SearchBar updateResult={setSearchResult} />
-        <SearchResult results={searchResult} /> */}
-
+        <SearchBar updateResult={setSearchResult} />
+        {/* <SearchResult results={searchResult} /> */}
         {/* <section className="search-container">
           <input
             type="search"
@@ -75,7 +72,6 @@ const Nav = () => {
         <button className="search-glass-button">
           <i className="fas fa-search"></i>
         </button> */}
-
         {/* second dropdown menu, copy of the first one */}
         {/* <div className="dropdown is-hoverable">
           <div className="dropdown-trigger">
@@ -98,7 +94,6 @@ const Nav = () => {
             </div>
           </div>
         </div> */}
-
         {/* post button */}
         <Link to="/NewPostPage">
           <section className="create-post-button">
@@ -107,7 +102,6 @@ const Nav = () => {
             </button>
           </section>
         </Link>
-
         <section>
           <div className="dropdown is-hoverable">
             <div className="dropdown-trigger">

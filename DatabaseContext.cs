@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using StackOverFlow.Models;
+using RedditCapstone.Models;
 
 namespace reddit_capstone
 {

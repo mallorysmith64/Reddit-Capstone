@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import Subreddit from './components/Subreddit'
 import Votes from './components/Votes'
-// import SearchBar from './components/SearchBar'
+import SearchBar from './components/SearchBar'
 // import SearchResults from './components/SearchResults'
 import Comments from './components/Comments'
 import NewPostPage from './components/NewPostPage'
@@ -24,8 +24,8 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage}></Route>
             {/* <Route exact path="/ChangeColors" component={ChangeColors}></Route> */}
-            {/* <Route exact path="/SearchBar" component={SearchBar}></Route>
-            <Route
+            <Route exact path="/SearchBar" component={SearchBar}></Route>
+            {/* <Route
               exact
               path="/SearchResults"
               component={SearchResults}

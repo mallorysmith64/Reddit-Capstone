@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Reddit_Capstone.Models;
 
-namespace StackOverFlow.Models
+namespace RedditCapstone.Models
 {
   //table for post
   public class Post

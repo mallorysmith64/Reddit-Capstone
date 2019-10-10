@@ -1,7 +1,7 @@
 using System;
 using Reddit_Capstone.Models;
 
-namespace StackOverFlow.Models
+namespace RedditCapstone.Models
 {
   public class Comment
   {

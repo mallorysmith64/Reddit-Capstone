@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-//reference databasecontext
 using reddit_capstone;
-using StackOverFlow.Models;
+using RedditCapstone.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace StackOverFlow.Controllers
+namespace RedditCapstone.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]

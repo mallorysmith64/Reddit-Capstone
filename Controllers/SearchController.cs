@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using reddit_capstone;
 
-namespace StackOverFlow.Controllers
+namespace RedditCapstone.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
@@ -18,11 +18,9 @@ namespace StackOverFlow.Controllers
       this.context = _context;
     }
 
-    //get search terms first
-    // [HttpGet("search/{searchTerm}")]
-    //get a list of posts based off a string instead of a number/the id
-    [HttpGet("posts")]
-    public async Task<ActionResult> SearchPosts([FromQuery] string query)
+    //get a list of posts based off a string instead of a number/the id first
+    [HttpGet("searchTerm")]
+    public async Task<ActionResult> GetSearchTerm([FromQuery] string query)
     {
       query = query.ToLower();
       var results = await context.Posts.Where(post =>

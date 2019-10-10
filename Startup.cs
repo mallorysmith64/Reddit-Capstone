@@ -9,8 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
+using reddit_capstone;
 
-namespace reddit_capstone
+namespace Reddit_Capstone
 {
   public class Startup
   {
