@@ -87,8 +87,7 @@ nav {
 .create-post-button {
   display: flex;
   align-self: center;
-  padding-left: 14em;
-  padding-right: 1em;
+  padding: 0.5em 1em 0em 14em;
 }
 
 .profile-dropdown-container {
