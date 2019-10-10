@@ -4,10 +4,6 @@ import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
 // import ChangeColors from './ChangeColors'
 
-/*todo: make SearchResult component 
-aka do a post request to display search results*/
-
-// import SearchResult from './SearchResults'
 import SearchBar from './SearchBar'
 
 import { Link } from 'react-router-dom'
@@ -59,41 +55,7 @@ const Nav = () => {
           </div>
         </div>
         <SearchBar updateResult={setSearchResult} />
-        {/* <SearchResult results={searchResult} /> */}
-        {/* <section className="search-container">
-          <input
-            type="search"
-            className="search-box"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-          />
-        </section>
-        <button className="search-glass-button">
-          <i className="fas fa-search"></i>
-        </button> */}
-        {/* second dropdown menu, copy of the first one */}
-        {/* <div className="dropdown is-hoverable">
-          <div className="dropdown-trigger">
-            <Link to="/SubredditBody">
-              <button
-                className="subreddit-dropdown"
-                aria-haspopup="true"
-                aria-controls="dropdown-menu"
-              >
-                Color Picker
-                <i className="fas fa-caret-down"></i>
-              </button>
-            </Link>
-          </div>
-          <div className="dropdown-menu" id="dropdown-menu" role="menu">
-            <div className="dropdown-content">
-              <Link to="/Subreddit" className="dropdown-item">
-                Color Palette
-              </Link>
-            </div>
-          </div>
-        </div> */}
+
         {/* post button */}
         <Link to="/NewPostPage">
           <section className="create-post-button">

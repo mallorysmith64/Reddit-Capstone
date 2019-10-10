@@ -29,8 +29,8 @@ const Subreddit = () => {
     getComment()
   }, [])
 
-  if (!posts) return <></>
-  if (!comment) return <></>
+  // if (!posts) return <></>
+  // if (!comment) return <></>
 
   return (
     <>
@@ -38,28 +38,30 @@ const Subreddit = () => {
       <Banner />
       {/* className= "posts" creates the rectangles */}
       <section className="body-background">
-        {/* <form className="rectangles"> */}
-        <header className="title">
-          <ul className="each-post">
-            {posts.map(name => (
-              <h2 className="white-rectangles" key={name.id}>
-                {name.title}
-                <li className="white-rectangles" key={name.id}>
-                  {name.content}
-                </li>
+        {posts.length > 0 && (
+          <header className="title">
+            <ul className="each-post">
+              {posts.map(name => (
+                <h2 className="white-rectangles" key={name.id}>
+                  {name.title}
+                  <li className="white-rectangles" key={name.id}>
+                    {name.content}
+                  </li>
 
-                {/* calling vote component, passing id*/}
-                <Votes id={name.id} />
+                  {/* calling vote component, passing id*/}
+                  <Votes id={name.id} />
 
-                <button className="comments">
-                  <p>Comments</p>
-                </button>
-                <li className="between-posts"></li>
-              </h2>
-            ))}
-          </ul>
-        </header>
+                  <button className="comments">
+                    <p>Comments</p>
+                  </button>
+                  <li className="between-posts"></li>
+                </h2>
+              ))}
+            </ul>
+          </header>
+        )}
       </section>
+      {posts.length === 0 && <h5>No Posts Were Found</h5>}
     </>
   )
 }
