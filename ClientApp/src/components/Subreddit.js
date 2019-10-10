@@ -7,6 +7,7 @@ import Votes from './Votes'
 // import { Link } from 'react-router-dom'
 
 const Subreddit = () => {
+  const [postResp] = useState([])
   const [posts, setPosts] = useState([])
   const [comment, setComment] = useState([])
 
@@ -36,11 +37,11 @@ const Subreddit = () => {
     <>
       <Nav />
       <Banner />
-      {/* className= "posts" creates the rectangles */}
       <section className="body-background">
-        {posts.length > 0 && (
-          <header className="title">
+        <header className="title">
+          {postResp.length > 0 && (
             <ul className="each-post">
+              {/* className= "posts" creates the rectangles */}
               {posts.map(name => (
                 <h2 className="white-rectangles" key={name.id}>
                   {name.title}
@@ -58,10 +59,11 @@ const Subreddit = () => {
                 </h2>
               ))}
             </ul>
-          </header>
-        )}
+          )}
+          {/* no response, show message for not found */}
+          {postResp.length === 0 && <h5>No Posts Were Found</h5>}
+        </header>
       </section>
-      {posts.length === 0 && <h5>No Posts Were Found</h5>}
     </>
   )
 }

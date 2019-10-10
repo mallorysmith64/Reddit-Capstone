@@ -54,6 +54,7 @@ const Nav = () => {
             </div>
           </div>
         </div>
+
         <SearchBar updateResult={setSearchResult} />
 
         {/* post button */}
