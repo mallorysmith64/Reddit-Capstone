@@ -10,6 +10,7 @@ body {
   margin: 0;
   min-height: 100%;
   font-family: verdana, arial, helvetica, sans-serif;
+  background-color: #dae0e6;
 }
 
 button {
@@ -125,7 +126,7 @@ nav {
 
 /* gray background*/
 .body-background {
-  background-color: #dae0e6;
+  /* background-color: #dae0e6; */
   padding: 2em 5em 2em 5em;
 }
 
@@ -204,6 +205,10 @@ nav {
 }
 
 /* newpostpage component css */
+
+/* .new-post-background {
+  background-color: green;
+} */
 
 .contact-header {
   display: flex;

@@ -47,7 +47,7 @@ const Nav = () => {
 
           <div className="dropdown-menu" id="dropdown-menu" role="menu">
             <div className="dropdown-content">
-              <Link to="/HomePage" className="dropdown-item">
+              <Link to="/" className="dropdown-item">
                 Home
               </Link>
 
