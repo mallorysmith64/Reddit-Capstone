@@ -35,13 +35,14 @@ const NewPostPage = () => {
 
       <section className="new-post-background">
         <section className="contact-header">
-          <h5 className="form-header">Create a post</h5>
+          <h2 className="form-header">Create a post</h2>
         </section>
 
         <section className="form">
           <form action="" className="col s12" onSubmit={e => submitNewPost(e)}>
             <div className="input-field col s6">
               <input
+                className="title-input"
                 id="title"
                 type="text"
                 placeholder="Title"
@@ -52,6 +53,7 @@ const NewPostPage = () => {
             </div>
             <div className="input-field col s6">
               <input
+                className="content-input"
                 id="content"
                 type="text"
                 placeholder="Text (optional)"
