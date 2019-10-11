@@ -20,6 +20,7 @@ const SearchBar = props => {
 
   return (
     <>
+      {/* <form onSubmit={getSearchTerm}> */}
       <section className="search-container">
         <input
           type="search"
@@ -37,6 +38,7 @@ const SearchBar = props => {
           <i className="fas fa-search"></i>
         </Link>
       </button>
+      {/* </form> */}
     </>
   )
 }

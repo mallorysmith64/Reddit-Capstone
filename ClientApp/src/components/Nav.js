@@ -65,6 +65,7 @@ const Nav = () => {
             </button>
           </Link>
         </section>
+
         <section>
           <div className="dropdown is-hoverable">
             <div className="dropdown-trigger">
