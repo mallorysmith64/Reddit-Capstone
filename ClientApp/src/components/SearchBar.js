@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import ResultsPage from './ResultsPage'
+import { Link } from 'react-router-dom'
+import ResultsPage from './ResultsPage'
 
 const SearchBar = props => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -32,9 +33,10 @@ const SearchBar = props => {
         className="search-glass-button"
         onClick={() => getSearchTerm(searchTerm)}
       >
-        <i className="fas fa-search"></i>
+        <Link to="/ResultsPage">
+          <i className="fas fa-search"></i>
+        </Link>
       </button>
-      {/* <ResultsPage /> */}
     </>
   )
 }

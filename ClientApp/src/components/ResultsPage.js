@@ -37,7 +37,7 @@ const ResultsPage = () => {
       <Nav />
       <section className="body-background">
         <header className="title">
-          {postResp.length > 0 && (
+          {postResp.length === 0 && (
             <ul className="each-post">
               {/* className= "posts" creates the rectangles */}
               {posts.map(name => (

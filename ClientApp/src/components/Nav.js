@@ -58,13 +58,13 @@ const Nav = () => {
         <SearchBar updateResult={setSearchResult} />
 
         {/* post button */}
-        <Link to="/NewPostPage">
-          <section className="create-post-button">
+        <section className="create-post-button">
+          <Link to="/NewPostPage">
             <button>
               <i className="fas fa-pen"></i>
             </button>
-          </section>
-        </Link>
+          </Link>
+        </section>
         <section>
           <div className="dropdown is-hoverable">
             <div className="dropdown-trigger">
