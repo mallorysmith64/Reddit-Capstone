@@ -35,30 +35,29 @@ const ResultsPage = () => {
   return (
     <>
       <Nav />
-      <Banner />
-      {postResp.length > 0 && (
       <section className="body-background">
         <header className="title">
-          <ul className="each-post">
-            {/* className= "posts" creates the rectangles */}
-            {posts.map(name => (
-              <h2 className="white-rectangles" key={name.id}>
-                {name.title}
-                <li className="white-rectangles" key={name.id}>
-                  {name.content}
-                </li>
+          {postResp.length > 0 && (
+            <ul className="each-post">
+              {/* className= "posts" creates the rectangles */}
+              {posts.map(name => (
+                <h2 className="white-rectangles" key={name.id}>
+                  {name.title}
+                  <li className="white-rectangles" key={name.id}>
+                    {name.content}
+                  </li>
 
-                {/* calling vote component, passing id*/}
-                <Votes id={name.id} />
+                  {/* calling vote component, passing id*/}
+                  <Votes id={name.id} />
 
-                <button className="comments">
-                  <p>Comments</p>
-                </button>
-                <li className="between-posts"></li>
-              </h2>
-            )
-            )}}
-          </ul>
+                  <button className="comments">
+                    <p>Comments</p>
+                  </button>
+                  <li className="between-posts"></li>
+                </h2>
+              ))}
+            </ul>
+          )}
           {postResp.length === 0 && <h5>No Posts Were Found</h5>}
         </header>
       </section>
