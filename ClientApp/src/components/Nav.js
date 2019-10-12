@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
+import Auth0 from './Auth'
 // import ChangeColors from './ChangeColors'
 
 import SearchBar from './SearchBar'
@@ -93,9 +94,17 @@ const Nav = () => {
                 <a href="/#" className="dropdown-item">
                   My Profile
                 </a>
-                <a href="/#" className="dropdown-item">
-                  Logout
-                </a>
+                <button
+                  className="dropdown-item"
+                  onClick={() => {
+                    Auth0.login()
+                  }}
+                >
+                  Login
+                </button>
+                {/* <a href="/#" className="dropdown-item">
+                  // Logout //{' '}
+                </a> */}
               </div>
             </div>
           </div>
