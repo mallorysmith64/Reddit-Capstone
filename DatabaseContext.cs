@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Reddit_Capstone.Models;
 using RedditCapstone.Models;
 
 namespace reddit_capstone
@@ -47,5 +48,6 @@ namespace reddit_capstone
     }
     public DbSet<Post> Posts { get; set; }
     public DbSet<Comment> Comments { get; set; }
+    public DbSet<User> Users { get; set; }
   }
 }

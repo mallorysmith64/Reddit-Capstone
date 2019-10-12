@@ -1,17 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import 'bootstrap/dist/css/bootstrap.css'
+import React from 'react'
+//imported ReactDOM
+import ReactDOM from 'react-dom'
+//changed BrowserRouter to as Router
+import { BrowserRouter as Router } from 'react-router-dom'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
+import history from './History'
 
-const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
-const rootElement = document.getElementById('root');
+const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')
+const rootElement = document.getElementById('root')
 
+//changed BrowserRouter to router
 ReactDOM.render(
-  <BrowserRouter basename={baseUrl}>
+  <Router basename={baseUrl} history={history}>
     <App />
-  </BrowserRouter>,
-  rootElement);
+  </Router>,
+  rootElement
+)
 
-registerServiceWorker();
+registerServiceWorker()

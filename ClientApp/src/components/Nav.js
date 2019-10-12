@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
-import Auth0 from './Auth'
+import auth from './auth'
 // import ChangeColors from './ChangeColors'
 
 import SearchBar from './SearchBar'
@@ -97,7 +97,7 @@ const Nav = () => {
                 <button
                   className="dropdown-item"
                   onClick={() => {
-                    Auth0.login()
+                    auth.login()
                   }}
                 >
                   Login

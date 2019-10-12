@@ -1,3 +1,5 @@
+//file comes from https://suncoast.io/handbook/resources/dotnet/add-auth0-to-react-dotnet-app/
+
 import auth0 from 'auth0-js'
 import history from '../History'
 import axios from 'axios'
