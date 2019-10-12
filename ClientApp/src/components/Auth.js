@@ -2,7 +2,8 @@ import auth0 from 'auth0-js'
 import history from '../History'
 import axios from 'axios'
 
-const DOMAIN = 'dev-dq3m7mok.auth0.com'
+//must change domain and client_ID found in app settings on Auth0 website
+const DOMAIN = 'dev-ykk47an3.auth0.com'
 const CLIENT_ID = '2ZRJXwAhHPpPHBAEPL06IF9Ri4Hyxy59'
 
 class Auth {
