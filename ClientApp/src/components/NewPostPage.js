@@ -12,7 +12,7 @@ const NewPostPage = () => {
 
   const submitNewPost = async e => {
     e.preventDefault()
-    const resp = await axios.post(`https://localhost:5001/api/Post`, post)
+    const resp = await axios.post('/api/Post', post)
     //setItem is a method
     sessionStorage.setItem('token', resp.data)
     console.log('post form', resp.data)

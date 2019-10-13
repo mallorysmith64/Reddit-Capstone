@@ -11,14 +11,14 @@ const ResultsPage = () => {
   const [comment, setComment] = useState([])
 
   const getPost = async () => {
-    const resp = await axios.get('https://localhost:5001/api/Post')
+    const resp = await axios.get('/api/Post')
     console.log('get this post response', resp)
     console.log('get this post', resp.data)
     setPosts(resp.data)
   }
 
   const getComment = async () => {
-    const resp = await axios.get('https://localhost:5001/api/Comment')
+    const resp = await axios.get('/api/Comment')
     console.log('comment response', resp)
     console.log('get comment', resp.data)
     setComment(resp.data)

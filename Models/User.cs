@@ -9,7 +9,7 @@ namespace Reddit_Capstone.Models
   {
     public int ID { get; set; }
     public string Email { get; set; }
-    public string UserName { get; set; } 
+    public string UserName { get; set; }
     public string HashedPassword { get; set; }
     public DateTime DateSignedUp { get; set; }
     public DateTime LastLoggedIn { get; set; }

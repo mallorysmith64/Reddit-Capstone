@@ -9,16 +9,14 @@ const Votes = props => {
   const [votes, setVotes] = useState(0)
 
   const getVotes = async id => {
-    const resp = await axios.get(`https://localhost:5001/api/Post/${id}/Votes`)
+    const resp = await axios.get(`/api/Post/${id}/Votes`)
     console.log('get votes response', resp)
     console.log('received votes', resp.data)
     setVotes(resp.data.upVote - resp.data.downVote)
   }
 
   const IncreaseVote = async id => {
-    const resp = await axios.patch(
-      `https://localhost:5001/api/Post/${id}/UpVote`
-    )
+    const resp = await axios.patch(`/api/Post/${id}/UpVote`)
     console.log(IncreaseVote)
     console.log('upvotes response', resp)
     console.log('upvotes', resp.data)
