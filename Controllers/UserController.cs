@@ -26,7 +26,7 @@ namespace Reddit_Capstone.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
-      return await context.User.ToListAsync();
+      return await context.Users.ToListAsync();
     }
 
     // GET: api/Users/5
