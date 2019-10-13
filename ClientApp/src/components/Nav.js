@@ -90,22 +90,17 @@ const Nav = () => {
             </div>
 
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
-              <div className="dropdown-content">
-                <a href="/#" className="dropdown-item">
-                  My Profile
-                </a>
-                <button
-                  className="dropdown-item"
-                  onClick={() => {
-                    auth.login()
-                  }}
-                >
-                  Login
-                </button>
-                {/* <a href="/#" className="dropdown-item">
+              <button
+                className="dropdown-item"
+                onClick={() => {
+                  auth.login()
+                }}
+              >
+                Login
+              </button>
+              {/* <a href="/#" className="dropdown-item">
                   // Logout //{' '}
                 </a> */}
-              </div>
             </div>
           </div>
         </section>
