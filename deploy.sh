@@ -14,5 +14,6 @@ docker push registry.heroku.com/reddit-capstone/web
 heroku container:release web -a reddit-capstone
 
 # sudo chmod 755 deploy.sh
+
 #after you deploy it once, you only have to do ./deploy
 # ./deploy.sh
