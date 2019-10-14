@@ -8,7 +8,7 @@ import Votes from './Votes'
 const ResultsPage = () => {
   const [postResp] = useState([])
   const [posts, setPosts] = useState([])
-  const [comment, setComment] = useState([])
+  // const [comment, setComment] = useState([])
 
   const getPost = async () => {
     const resp = await axios.get('/api/Post')
@@ -17,16 +17,16 @@ const ResultsPage = () => {
     setPosts(resp.data)
   }
 
-  const getComment = async () => {
-    const resp = await axios.get('/api/Comment')
-    console.log('comment response', resp)
-    console.log('get comment', resp.data)
-    setComment(resp.data)
-  }
+  // const getComment = async () => {
+  //   const resp = await axios.get('/api/Comment')
+  //   console.log('comment response', resp)
+  //   console.log('get comment', resp.data)
+  //   setComment(resp.data)
+  // }
 
   useEffect(() => {
     getPost()
-    getComment()
+    // getComment()
   }, [])
 
   // if (!posts) return <></>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import ResultsPage from './ResultsPage'
+// import ResultsPage from './ResultsPage'
 
 const SearchBar = props => {
   const [searchTerm, setSearchTerm] = useState('')

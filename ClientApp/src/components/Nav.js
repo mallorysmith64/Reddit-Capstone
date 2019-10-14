@@ -9,7 +9,7 @@ import SearchBar from './SearchBar'
 import { Link } from 'react-router-dom'
 
 const Nav = () => {
-  const [searchResult, setSearchResult] = useState(null)
+  const [setSearchResult] = useState(null)
   // const [user, setUser] = useState([])
 
   // const getUser = async () => {
