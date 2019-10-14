@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 //do I need to import reactDOM here?
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 
-import auth from 'auth0-js'
 import Auth from './components/auth'
 import axios from 'axios'
 
@@ -19,6 +18,7 @@ import NewPostPage from './components/NewPostPage'
 
 import 'bulma/css/bulma.css'
 import './components/index.css'
+import History from './History'
 
 // export default class App extends Component {
 //   static displayName = App.name
@@ -34,22 +34,22 @@ class App extends Component {
   render() {
     return (
       <>
-        <Router>
+        <Router history={History}>
           <Switch>
-            <Route path="/login" render={() => auth.login()} />
+            <Route path="/login" render={() => Auth.login()} />
             <Route
               path="/logout"
               render={() => {
-                auth.logout()
+                Auth.logout()
                 return <p />
               }}
             />
             <Route
               path="/callback"
               render={() => {
-                auth.handleAuthentication(() => {
+                Auth.handleAuthentication(() => {
                   axios.defaults.headers.common = {
-                    Authorization: auth.authorizationHeader()
+                    Authorization: Auth.authorizationHeader()
                   }
                 })
                 return <p />

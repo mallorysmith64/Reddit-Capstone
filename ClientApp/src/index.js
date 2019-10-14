@@ -13,7 +13,7 @@ const rootElement = document.getElementById('root')
 
 //changed BrowserRouter to router
 ReactDOM.render(
-  <Router basename={baseUrl} history={history}>
+  <Router basename={baseUrl}>
     <App />
   </Router>,
   rootElement
