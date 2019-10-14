@@ -98,9 +98,14 @@ const Nav = () => {
               >
                 Login
               </button>
-              {/* <a href="/#" className="dropdown-item">
-                  // Logout //{' '}
-                </a> */}
+              <button
+                className="dropdown-item"
+                onClick={() => {
+                  auth.logout()
+                }}
+              >
+                Logout
+              </button>
             </div>
           </div>
         </section>

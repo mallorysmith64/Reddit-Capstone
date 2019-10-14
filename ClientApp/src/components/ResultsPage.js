@@ -30,7 +30,6 @@ const ResultsPage = () => {
   }, [])
 
   // if (!posts) return <></>
-  // if (!comment) return <></>
 
   return (
     <>
