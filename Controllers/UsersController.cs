@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Reddit_Capstone.Models;
@@ -71,16 +69,6 @@ namespace sdg_react_template.Controllers
 
       return NoContent();
     }
-
-    // [HttpGet("check")]
-    // public async Task<ActionResult> CheckIfUserExists()
-    // {
-
-    //   var token = User.Claims.First(f => f.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
-    //   var exists = await _context.Users.AnyAsync(a => a.AccessToken == token);
-
-    //   return Ok(new { exists });
-    // }
 
     // POST: api/Users
     [HttpPost]
