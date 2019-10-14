@@ -3,7 +3,6 @@ import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
 import auth from './auth'
-// import ChangeColors from './ChangeColors'
 
 import SearchBar from './SearchBar'
 
@@ -11,6 +10,18 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
   const [searchResult, setSearchResult] = useState(null)
+  // const [user, setUser] = useState([])
+
+  // const getUser = async () => {
+  //   const resp = await axios.get('/api/User')
+  //   console.log('get this post response', resp)
+  //   console.log('get this post', resp.data)
+  //   setUser(resp.data)
+  // }
+
+  // useEffect(() => {
+  //   getUser()
+  // }, [])
 
   return (
     <>
@@ -83,13 +94,19 @@ const Nav = () => {
                     height="30"
                   />
                   <section className="username-container"></section>
-                  <h1 className="username">username</h1>
+
+                  {/* todo: dynamically change username when logged in */}
+                  <h1 className="username">UserName</h1>
                 </section>
                 <i className="fas fa-caret-down"></i>
               </button>
             </div>
 
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
+              <Link to="/UserProfile" className="dropdown-item">
+                My Profile
+              </Link>
+
               <button
                 className="dropdown-item"
                 onClick={() => {
