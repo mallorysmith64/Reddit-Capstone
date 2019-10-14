@@ -98,14 +98,16 @@ const Nav = () => {
               >
                 Login
               </button>
-              <button
-                className="dropdown-item"
-                onClick={() => {
-                  auth.logout()
-                }}
-              >
-                Logout
-              </button>
+              {auth.isAuthenticated() && (
+                <button
+                  className="dropdown-item"
+                  onClick={() => {
+                    auth.logout()
+                  }}
+                >
+                  Logout
+                </button>
+              )}
             </div>
           </div>
         </section>

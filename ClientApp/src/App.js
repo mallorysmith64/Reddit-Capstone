@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-//do I need to import reactDOM here?
-import ReactDOM from 'react-dom'
 import { Router, Route, Switch } from 'react-router-dom'
 
 import Auth from './components/auth'
@@ -14,6 +12,7 @@ import SearchBar from './components/SearchBar'
 import ResultsPage from './components/ResultsPage'
 import Comments from './components/Comments'
 import NewPostPage from './components/NewPostPage'
+import UserProfile from './components/UserProfile'
 // import ChangeColors from './components/ChangeColors'
 
 import 'bulma/css/bulma.css'
@@ -62,6 +61,7 @@ class App extends Component {
             <Route exact path="/Votes" component={Votes}></Route>
             <Route exact path="/Subreddit" component={Subreddit}></Route>
             <Route exact path="/Comments" component={Comments}></Route>
+            <Route exact path="/UserProfile" component={UserProfile}></Route>
             <Route exact path="/NewPostPage" component={NewPostPage}></Route>
           </Switch>
           {/* <Community /> */}
