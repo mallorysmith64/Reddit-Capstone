@@ -265,18 +265,26 @@ nav {
   .search-glass-button {
     display: none;
   }
-  /* .subreddit-dropdown {
-    padding: 0em 0em 0.3em 0.2em;
-  } */
+  .subreddit-dropdown {
+    padding: 0em;
+  }
   .subreddit-text {
-    font-size: 0.8em;
-    padding-right: 0.2em;
+    font-size: 0.1em;
+    padding-right: 0em;
+    color: transparent;
   }
   .create-post-container {
-    position: absolute;
-    padding-left: 18em;
+    padding: 0em;
   }
   .profile-dropdown-container {
-    padding: 0.2em 0.1em 0.1em 0.1em;
+    padding: 0.1em;
+    color: transparent;
+  }
+  .profile-dropdown,
+  .username-container {
+    padding-right: 0em;
+  }
+  .username {
+    font-size: 0.2em;
   }
 }
