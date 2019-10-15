@@ -79,6 +79,14 @@ nav {
   background-color: #f2f5f8dc;
 }
 
+.fa-search {
+  color: rgb(24, 21, 21);
+}
+
+.fa-search:hover {
+  color: #2eb79e;
+}
+
 .search-glass-button:hover {
   border: 0.01em solid rgb(209, 204, 204) !important;
   background-color: white;
