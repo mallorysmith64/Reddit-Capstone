@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
-// import Subreddit from './Subreddit'
 
 const NewPostPage = () => {
   const [post, setPost] = useState({
     title: '',
     content: ''
-    // comments: ''
   })
 
   const submitNewPost = async e => {

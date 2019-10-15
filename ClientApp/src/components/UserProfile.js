@@ -1,14 +1,9 @@
-// import React, { Fragment } from 'react'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
 
 const UserProfile = () => {
   const [user, setUser] = useState([])
-
-  // if (loading || !user) {
-  //   return <div>Loading...</div>
-  // }
 
   const getUser = async () => {
     const resp = await axios.get('/api/Post')
@@ -33,3 +28,5 @@ const UserProfile = () => {
 }
 
 export default UserProfile
+
+//todo: using auth 0, username should update when logged into app

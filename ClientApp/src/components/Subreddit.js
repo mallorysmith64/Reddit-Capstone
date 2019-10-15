@@ -3,13 +3,9 @@ import axios from 'axios'
 import Nav from './Nav'
 import Banner from './Banner'
 import Votes from './Votes'
-// import SearchBar from './SearchBar'
-// import { Link } from 'react-router-dom'
 
 const Subreddit = () => {
-  // const [postResp] = useState([])
   const [posts, setPosts] = useState([])
-  // const [comment, setComment] = useState([])
 
   const getPost = async () => {
     const resp = await axios.get('/api/Post')
@@ -18,20 +14,9 @@ const Subreddit = () => {
     setPosts(resp.data)
   }
 
-  // const getComment = async () => {
-  //   const resp = await axios.get('/api/Comment')
-  //   console.log('comment response', resp)
-  //   console.log('get comment', resp.data)
-  //   setComment(resp.data)
-  // }
-
   useEffect(() => {
     getPost()
-    // getComment()
   }, [])
-
-  // if (!posts) return <></>
-  // if (!comment) return <></>
 
   return (
     <>
@@ -40,7 +25,6 @@ const Subreddit = () => {
       <section className="body-background">
         <header className="title">
           <ul className="each-post">
-            {/* className= "posts" creates the rectangles */}
             {posts.map(name => (
               <h2 className="white-rectangles" key={name.id}>
                 {name.title}
@@ -58,7 +42,6 @@ const Subreddit = () => {
               </h2>
             ))}
           </ul>
-          {/* {postResp.length === 0 && <h5>No Posts Were Found</h5>} */}
         </header>
       </section>
     </>
@@ -66,3 +49,13 @@ const Subreddit = () => {
 }
 
 export default Subreddit
+
+// todo: make comments
+//const [comment, setComment] = useState([])
+// const getComment = async () => {
+//   const resp = await axios.get('/api/Comment')
+//   console.log('comment response', resp)
+//   console.log('get comment', resp.data)
+//   setComment(resp.data)
+// }
+// getComment()

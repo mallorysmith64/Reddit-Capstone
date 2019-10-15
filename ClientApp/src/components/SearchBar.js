@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-// import ResultsPage from './ResultsPage'
 
 const SearchBar = props => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -20,7 +19,6 @@ const SearchBar = props => {
 
   return (
     <>
-      {/* <form onSubmit={getSearchTerm}> */}
       <section className="search-container">
         <input
           type="search"
@@ -38,7 +36,6 @@ const SearchBar = props => {
           <i className="fas fa-search"></i>
         </Link>
       </button>
-      {/* </form> */}
     </>
   )
 }

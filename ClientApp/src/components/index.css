@@ -84,10 +84,14 @@ nav {
   background-color: white;
 }
 
-.create-post-button {
+.create-post-container {
   display: flex;
   align-self: center;
   padding: 0.5em 1em 0em 7em;
+}
+
+.create-post-button:hover {
+  color: #55ddc6;
 }
 
 .profile-dropdown-container {
@@ -123,7 +127,6 @@ nav {
   line-height: 1.3em;
 }
 
-/* gray background */
 .body-background {
   background-color: #dae0e6;
   padding: 2em 5em 2em 5em;
@@ -177,7 +180,6 @@ nav {
   font-weight: 500;
   line-height: 1.3em;
   text-transform: uppercase;
-  /* padding-left: 4em; */
 }
 
 .card {
@@ -235,7 +237,6 @@ nav {
 }
 
 /* search page css */
-
 .search-header-container {
   padding: 2em;
   font-size: 1.5em;
@@ -243,4 +244,11 @@ nav {
 
 .search-header {
   font-weight: bold;
+}
+
+/*mobile version*/
+@media (min-width: 800px) {
+  .top-background {
+    height: 6.2em;
+  }
 }

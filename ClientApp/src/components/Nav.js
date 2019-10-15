@@ -68,9 +68,9 @@ const Nav = () => {
         <SearchBar updateResult={setSearchResult} />
 
         {/* post button */}
-        <section className="create-post-button">
+        <section className="create-post-container">
           <Link to="/NewPostPage">
-            <button>
+            <button className="create-post-button">
               <i className="fas fa-pen"></i>
             </button>
           </Link>

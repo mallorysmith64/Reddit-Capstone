@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
 import Votes from './Votes'
-// import SearchBar from './SearchBar'
-// import { Link } from 'react-router-dom'
 
 const ResultsPage = () => {
   const [postResp] = useState([])
   const [posts, setPosts] = useState([])
-  // const [comment, setComment] = useState([])
 
   const getPost = async () => {
     const resp = await axios.get('/api/Post')
@@ -17,19 +14,9 @@ const ResultsPage = () => {
     setPosts(resp.data)
   }
 
-  // const getComment = async () => {
-  //   const resp = await axios.get('/api/Comment')
-  //   console.log('comment response', resp)
-  //   console.log('get comment', resp.data)
-  //   setComment(resp.data)
-  // }
-
   useEffect(() => {
     getPost()
-    // getComment()
   }, [])
-
-  // if (!posts) return <></>
 
   return (
     <>
@@ -39,7 +26,6 @@ const ResultsPage = () => {
         <header className="title">
           {postResp.length > 0 && (
             <ul className="each-post">
-              {/* className= "posts" creates the rectangles */}
               {posts.map(name => (
                 <h2 className="white-rectangles" key={name.id}>
                   {name.title}
@@ -47,7 +33,6 @@ const ResultsPage = () => {
                     {name.content}
                   </li>
 
-                  {/* calling vote component, passing id*/}
                   <Votes id={name.id} />
 
                   <button className="comments">
@@ -66,3 +51,5 @@ const ResultsPage = () => {
 }
 
 export default ResultsPage
+
+//todo: make sure to add comments to results page
