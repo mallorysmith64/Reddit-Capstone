@@ -10,18 +10,6 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
   const [setSearchResult] = useState(null)
-  // const [user, setUser] = useState([])
-
-  // const getUser = async () => {
-  //   const resp = await axios.get('/api/User')
-  //   console.log('get this post response', resp)
-  //   console.log('get this post', resp.data)
-  //   setUser(resp.data)
-  // }
-
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
 
   return (
     <>
@@ -51,17 +39,15 @@ const Nav = () => {
           </div>
 
           <div className="dropdown-menu" id="dropdown-menu" role="menu">
-            <div className="dropdown-content">
-              <Link to="/" className="dropdown-item">
-                Home
-              </Link>
+            <Link to="/" className="dropdown-item">
+              Home
+            </Link>
 
-              {/* link is seen as an a tag, having an a tag within an a tag is NOT allowed */}
+            {/* link is seen as an a tag, having an a tag within an a tag is NOT allowed */}
 
-              <Link to="/Subreddit" className="dropdown-item">
-                Subreddit
-              </Link>
-            </div>
+            <Link to="/Subreddit" className="dropdown-item">
+              Subreddit
+            </Link>
           </div>
         </div>
 

@@ -32,13 +32,11 @@ const HomePage = () => {
   return (
     <>
       <Nav />
-      {/* className= "posts" creates the rectangles */}
       <section className="body-background">
-        {/* <form className="rectangles"> */}
         <header className="title">
           <ul className="each-post">
             {posts.map(name => (
-              <li className="white-rectangles" key={name.id}>
+              <h2 className="white-rectangles" key={name.id}>
                 {name.title}
                 <li className="white-rectangles" key={name.id}>
                   {name.content}
@@ -51,7 +49,7 @@ const HomePage = () => {
                   <p>Comments</p>
                 </button>
                 <li className="between-posts"></li>
-              </li>
+              </h2>
             ))}
           </ul>
         </header>
