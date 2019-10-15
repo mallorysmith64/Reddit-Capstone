@@ -94,9 +94,8 @@ const Nav = () => {
                     height="30"
                   />
                   <section className="username-container"></section>
-
                   {/* todo: dynamically change username when logged in */}
-                  <h1 className="username">UserName</h1>
+                  <h1 className="username">User</h1>
                 </section>
                 <i className="fas fa-caret-down"></i>
               </button>
@@ -104,7 +103,7 @@ const Nav = () => {
 
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
               <Link to="/UserProfile" className="dropdown-item">
-                My Profile
+                Profile
               </Link>
 
               <button

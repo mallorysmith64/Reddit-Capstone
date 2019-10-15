@@ -57,7 +57,7 @@ nav {
   /* centers subreddit text */
   align-items: center;
   font-weight: bold;
-  padding-right: 16em;
+  padding-right: 5em;
 }
 
 .search-container {
@@ -99,7 +99,7 @@ nav {
 
 .profile-dropdown {
   display: flex;
-  padding-right: 12em;
+  padding-right: 1em;
   font-weight: bold;
 }
 
