@@ -32,24 +32,22 @@ const Nav = () => {
         </section>
         <div className="dropdown is-hoverable">
           <div className="dropdown-trigger">
-            <Link to="/SubredditBody">
-              <button
-                className="subreddit-dropdown"
-                aria-haspopup="true"
-                aria-controls="dropdown-menu"
-              >
-                <section className="subreddit-text">
-                  <img
-                    src={SubredditIcon}
-                    alt="subreddit icon"
-                    width="30"
-                    height="30"
-                  />
-                  r/chemistry
-                </section>
-                <i className="fas fa-caret-down"></i>
-              </button>
-            </Link>
+            <button
+              className="subreddit-dropdown"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+            >
+              <section className="subreddit-text">
+                <img
+                  src={SubredditIcon}
+                  alt="subreddit icon"
+                  width="30"
+                  height="30"
+                />
+                r/chemistry
+              </section>
+              <i className="fas fa-caret-down"></i>
+            </button>
           </div>
 
           <div className="dropdown-menu" id="dropdown-menu" role="menu">
