@@ -38,17 +38,18 @@ const HomePage = () => {
           <ul className="each-post">
             {posts.map(name => (
               <article className="white-rectangles" key={name.id}>
-                <h3 className="posted-by" key={name.id}>
-                  Posted by u/{name.postedBy || 'unknown'}
-                </h3>
-                <h3 className="posted-by" key={name.id}>
-                  TimePassed:
-                  {(name.timePassed &&
-                    moment()
-                      .startOf('day')
-                      .fromNow()) ||
-                    'unknown'}
-                </h3>
+                <span className="user-and-timepassed">
+                  <h3 className="posted-by" key={name.id}>
+                    Posted by u/{name.postedBy || 'unknown'}
+                  </h3>
+                  <h3 className="timepassed" key={name.id}>
+                    {(name.timePassed &&
+                      moment()
+                        .startOf('day')
+                        .fromNow()) ||
+                      'unknown'}
+                  </h3>
+                </span>
                 <h1 className="post-title" key={name.key}>
                   {name.title}
                 </h1>
