@@ -8,7 +8,7 @@ const SearchBar = props => {
   const getSearchTerm = async searchTerm => {
     const resp = await axios.get(`/api/Search/searchTerm?query=${searchTerm}`)
     console.log('get search term works', resp)
-    props.updateResult(resp.data.results)
+    // props.updateResult(resp.data.results)
   }
 
   useEffect(() => {
