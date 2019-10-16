@@ -38,11 +38,11 @@ const HomePage = () => {
           <ul className="each-post">
             {posts.map(name => (
               <article className="white-rectangles" key={name.id}>
-                <span className="user-and-timepassed">
-                  <h3 className="posted-by" key={name.id}>
+                <span className="user-and-timepassed" key={name.post}>
+                  <h3 className="posted-by" key={name.posted}>
                     Posted by u/{name.postedBy || 'unknown'}
                   </h3>
-                  <h3 className="timepassed" key={name.id}>
+                  <h3 className="timepassed" key={name.timepassed}>
                     {(name.timePassed &&
                       moment()
                         .startOf('day')

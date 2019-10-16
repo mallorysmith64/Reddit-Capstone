@@ -95,7 +95,7 @@ const Nav = () => {
 
                   {/*username should dynamically change*/}
                   {users.map(name => (
-                    <h1 className="username" key={name.key}>
+                    <h1 className="username" key={name.id}>
                       {name.userName}
                     </h1>
                   ))}
