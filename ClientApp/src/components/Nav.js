@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RedditIcon from './images/reddit_filled_icon.png'
 import SubredditIcon from './images/subreddit_blue_icon.png'
 import DefaultAvatar from './images/reddit_default_avatar.png'
 import auth from './auth'
+
+import axios from 'axios'
 
 import SearchBar from './SearchBar'
 
@@ -10,6 +12,18 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
   const [setSearchResult] = useState(null)
+  const [users, setUsers] = useState([])
+
+  const getUser = async () => {
+    const resp = await axios.get('/api/Users')
+    console.log('get this user response', resp)
+    console.log('get user', resp.data)
+    setUsers(resp.data)
+  }
+
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <>
@@ -78,8 +92,13 @@ const Nav = () => {
                     height="30"
                   />
                   <section className="username-container"></section>
-                  {/* todo: dynamically change username when logged in */}
-                  <h1 className="username">User</h1>
+
+                  {/*username should dynamically change*/}
+                  {users.map(name => (
+                    <h1 className="username" key={name.key}>
+                      {name.userName}
+                    </h1>
+                  ))}
                 </section>
                 <i className="fas fa-caret-down"></i>
               </button>

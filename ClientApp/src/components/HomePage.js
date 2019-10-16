@@ -37,9 +37,9 @@ const HomePage = () => {
           <ul className="each-post">
             {posts.map(name => (
               <article className="white-rectangles" key={name.id}>
-                {/* <h3 className="posted-by" key={name.id}>
-                  Posted by u/{name.postedBy}
-                </h3> */}
+                <h3 className="posted-by" key={name.id}>
+                  Posted by u/{name.postedBy || 'unknown'}
+                </h3>
                 <h1 className="post-title" key={name.key}>
                   {name.title}
                 </h1>

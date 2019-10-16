@@ -30,10 +30,7 @@ const UserProfile = () => {
               Username: {name.userName || 'N/A'}
             </h2>
             <h2 className="post-title" key={name.key}>
-              {name.dateSignedUp || 'N/A'}
-            </h2>
-            <h2 className="post-title" key={name.key}>
-              {name.lastLoggedIn || 'N/A'}
+              Cake day: {name.dateSignedUp || 'N/A'}
             </h2>
           </article>
         ))}

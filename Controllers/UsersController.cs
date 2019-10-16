@@ -77,14 +77,14 @@ namespace sdg_react_template.Controllers
     }
 
     // POST: api/Users
-    [HttpPost]
-    public async Task<ActionResult<User>> PostUsers(User users)
-    {
-      _context.Users.Add(users);
-      await _context.SaveChangesAsync();
+    // [HttpPost]
+    // public async Task<ActionResult<User>> PostUsers(User users)
+    // {
+    //   _context.Users.Add(users);
+    //   await _context.SaveChangesAsync();
 
-      return CreatedAtAction("GetUsers", new { id = users.ID }, users);
-    }
+    //   return CreatedAtAction("GetUsers", new { id = users.ID }, users);
+    // }
 
     [HttpPost("register")]
     public ActionResult Register([FromBody] User userData)
