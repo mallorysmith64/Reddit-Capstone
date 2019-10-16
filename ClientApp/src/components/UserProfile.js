@@ -21,7 +21,10 @@ const UserProfile = () => {
     <>
       <Nav />
       <section className="body-background">
-        <header className="title">User Settings</header>
+        <header className="user-settings-container">
+          <i className="fas fa-cog"></i>
+          <h2 className="user-settings-title">User settings</h2>
+        </header>
         {users.map(name => (
           <article className="white-rectangles" key={name.id}>
             <h1 className="post-title" key={name.key}>
@@ -31,7 +34,7 @@ const UserProfile = () => {
               Username: {name.userName || 'N/A'}
             </h2>
             <h2 className="post-title" key={name.key}>
-              Cake day:{' '}
+              Cake day:
               {(name.dateSignedUp && moment().format('MMM Do YY')) || 'N/A'}
             </h2>
           </article>
