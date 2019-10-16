@@ -11,8 +11,8 @@ namespace Reddit_Capstone.Models
     public string Email { get; set; }
     public string UserName { get; set; }
     public string HashedPassword { get; set; }
-    public DateTime DateSignedUp { get; set; }
-    public DateTime LastLoggedIn { get; set; }
+    public DateTime DateSignedUp { get; set; } = DateTime.Now;
+    public DateTime LastLoggedIn { get; set; } = DateTime.Now;
     public List<Post> Posts { get; set; } = new List<Post>();
     public List<Comment> Comments { get; set; } = new List<Comment>();
   }

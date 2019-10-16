@@ -3,13 +3,13 @@ import axios from 'axios'
 import Nav from './Nav'
 
 const UserProfile = () => {
-  const [user, setUser] = useState([])
+  const [users, setUsers] = useState([])
 
   const getUser = async () => {
-    const resp = await axios.get('/api/Post')
-    console.log('get this post response', resp)
-    console.log('get this post', resp.data)
-    setUser(resp.data)
+    const resp = await axios.get('/api/Users')
+    console.log('get this user response', resp)
+    console.log('get user', resp.data)
+    setUsers(resp.data)
   }
 
   useEffect(() => {
@@ -20,8 +20,23 @@ const UserProfile = () => {
     <>
       <Nav />
       <section className="body-background">
-        <header className="title">My Profile</header>
-        <h2>{user.UserName}</h2>
+        <header className="title">User Settings</header>
+        {users.map(name => (
+          <article className="white-rectangles" key={name.id}>
+            <h1 className="post-title" key={name.key}>
+              Email Address: {name.email}
+            </h1>
+            <h2 className="post-title" key={name.key}>
+              Username: {name.userName || 'N/A'}
+            </h2>
+            <h2 className="post-title" key={name.key}>
+              {name.dateSignedUp || 'N/A'}
+            </h2>
+            <h2 className="post-title" key={name.key}>
+              {name.lastLoggedIn || 'N/A'}
+            </h2>
+          </article>
+        ))}
       </section>
     </>
   )

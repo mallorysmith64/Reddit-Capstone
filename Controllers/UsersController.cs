@@ -5,6 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Reddit_Capstone.Models;
 using reddit_capstone;
+using Microsoft.AspNetCore.Identity;
+using System;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace sdg_react_template.Controllers
 {
@@ -78,6 +84,52 @@ namespace sdg_react_template.Controllers
       await _context.SaveChangesAsync();
 
       return CreatedAtAction("GetUsers", new { id = users.ID }, users);
+    }
+
+    [HttpPost("register")]
+    public ActionResult Register([FromBody] User userData)
+    {
+      // check if the user already exists
+      var exists = _context.Users.Any(user => user.Email.ToLower() == userData.Email.ToLower());
+      if (exists)
+      {
+        return BadRequest(new { Message = "User with the that email exists" });
+      }
+      else
+      {
+        // if is doesn't, create a new user
+        var user = new User
+        {
+          Email = userData.Email
+        };
+        // hash the password
+        var hashedPassword = new PasswordHasher<User>().HashPassword(user, userData.HashedPassword);
+        // save the new user & hashedpassword
+        user.HashedPassword = hashedPassword;
+        _context.Users.Add(user);
+        _context.SaveChanges();
+        // create the token 
+        // define its lifespan
+        var expirationTime = DateTime.UtcNow.AddSeconds(259200);
+        var payload = new SecurityTokenDescriptor
+        {
+          Subject = new ClaimsIdentity(new[]{
+                new Claim(ClaimTypes.Name, user.Email),
+                new Claim("id", user.ID.ToString())
+            }),
+          Expires = expirationTime,
+          SigningCredentials = new SigningCredentials(
+              new SymmetricSecurityKey(Encoding.UTF8.GetBytes("NRW and ALG 4 life!")),
+              SecurityAlgorithms.HmacSha256Signature
+          )
+
+        };
+        var tokenGenerator = new JwtSecurityTokenHandler();
+        var token = tokenGenerator.WriteToken(tokenGenerator.CreateToken(payload));
+
+        // return the token
+        return Ok();
+      }
     }
 
     // DELETE: api/Users/5
