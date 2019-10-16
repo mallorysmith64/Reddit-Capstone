@@ -26,12 +26,13 @@ const Subreddit = () => {
         <header className="title">
           <ul className="each-post">
             {posts.map(name => (
-              <h2 className="white-rectangles" key={name.id}>
-                {name.title}
-                <li className="white-rectangles" key={name.id}>
+              <article className="white-rectangles" key={name.id}>
+                <h1 className="post-title" key={name.id}>
+                  {name.title}
+                </h1>
+                <h2 className="post-content" key={name.id}>
                   {name.content}
-                </li>
-
+                </h2>
                 {/* calling vote component, passing id*/}
                 <Votes id={name.id} />
 
@@ -39,7 +40,7 @@ const Subreddit = () => {
                   <p>Comments</p>
                 </button>
                 <li className="between-posts"></li>
-              </h2>
+              </article>
             ))}
           </ul>
         </header>

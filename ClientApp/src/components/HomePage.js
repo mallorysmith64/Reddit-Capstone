@@ -36,12 +36,16 @@ const HomePage = () => {
         <header className="title">
           <ul className="each-post">
             {posts.map(name => (
-              <h2 className="white-rectangles" key={name.id}>
-                {name.title}
-                <li className="white-rectangles" key={name.id}>
+              <article className="white-rectangles" key={name.id}>
+                {/* <h3 className="posted-by" key={name.id}>
+                  Posted by u/{name.postedBy}
+                </h3> */}
+                <h1 className="post-title" key={name.id}>
+                  {name.title}
+                </h1>
+                <h2 className="post-content" key={name.id}>
                   {name.content}
-                </li>
-
+                </h2>
                 {/* calling vote component, passing id*/}
                 <Votes id={name.id} />
 
@@ -49,7 +53,7 @@ const HomePage = () => {
                   <p>Comments</p>
                 </button>
                 <li className="between-posts"></li>
-              </h2>
+              </article>
             ))}
           </ul>
         </header>

@@ -153,6 +153,23 @@ nav {
   width: 30em;
 }
 
+.posted-by {
+  padding: 0.4em 0em 1em 8em;
+  font-size: 0.5em;
+  color: #8a8d8d;
+  font-weight: bold;
+}
+
+.post-title {
+  padding-left: 2em;
+  font-size: 0.8em;
+}
+
+.post-content {
+  padding: 0.7em 0em 0em 2.6em;
+  font-size: 0.6em;
+}
+
 .title {
   display: flex;
   padding-left: 2em;

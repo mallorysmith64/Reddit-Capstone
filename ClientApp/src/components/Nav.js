@@ -46,7 +46,7 @@ const Nav = () => {
             {/* link is seen as an a tag, having an a tag within an a tag is NOT allowed */}
 
             <Link to="/Subreddit" className="dropdown-item">
-              Subreddit
+              Chemistry
             </Link>
           </div>
         </div>
