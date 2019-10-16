@@ -27,10 +27,10 @@ const Subreddit = () => {
           <ul className="each-post">
             {posts.map(name => (
               <article className="white-rectangles" key={name.id}>
-                <h1 className="post-title" key={name.id}>
+                <h1 className="post-title" key={name.key}>
                   {name.title}
                 </h1>
-                <h2 className="post-content" key={name.id}>
+                <h2 className="post-content" key={name.key}>
                   {name.content}
                 </h2>
                 {/* calling vote component, passing id*/}

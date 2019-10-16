@@ -90,14 +90,16 @@ const Nav = () => {
                 Profile
               </Link>
 
-              <button
-                className="dropdown-item"
-                onClick={() => {
-                  auth.login()
-                }}
-              >
-                Login
-              </button>
+              {!auth.isAuthenticated() && (
+                <button
+                  className="dropdown-item"
+                  onClick={() => {
+                    auth.login()
+                  }}
+                >
+                  Login
+                </button>
+              )}
               {auth.isAuthenticated() && (
                 <button
                   className="dropdown-item"
