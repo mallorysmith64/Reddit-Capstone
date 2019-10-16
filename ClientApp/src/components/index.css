@@ -287,4 +287,20 @@ nav {
   .username {
     font-size: 0.2em;
   }
+  .body-background {
+    padding: 1em 0em 0em 0em;
+  }
+  .between-posts {
+    padding: 0.1em;
+  }
+  .title {
+    padding-left: 0.5em;
+  }
+  .white-rectangles {
+    width: 10em;
+  }
+  .comments {
+    font-size: 0.8em;
+    margin-left: 5.5em;
+  }
 }
