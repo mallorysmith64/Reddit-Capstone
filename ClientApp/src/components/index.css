@@ -220,10 +220,6 @@ nav {
   height: 12em;
 }
 
-/* .create-post-button-two {
-  background-color: #104e44;
-} */
-
 .card-footer-item {
   color: white;
   font-size: 0.8em;
@@ -307,48 +303,82 @@ nav {
 
 /*mobile version*/
 @media (max-width: 360px) {
+  /* nav media queries */
   .navbar {
     padding: 0.6em;
   }
+
   .reddit-text,
   .search-container,
   .search-glass-button {
     display: none;
   }
+
   .subreddit-dropdown {
     padding: 0em;
   }
+
   .subreddit-text {
     font-size: 0.1em;
     padding-right: 0em;
     color: transparent;
   }
+
   .create-post-container {
     padding: 0em;
   }
+
   .profile-dropdown-container {
     padding: 0.1em;
     color: transparent;
   }
+
   .profile-dropdown,
   .username-container {
     padding-right: 0em;
   }
+
   .username {
     font-size: 0.2em;
   }
+
+  /* post media queries */
   .body-background {
     padding: 1em 0em 0em 0em;
   }
+
   .between-posts {
     padding: 0.1em;
   }
+
   .title {
     padding-left: 0.5em;
   }
+
   .white-rectangles {
     width: 10em;
   }
+
+  .posted-by {
+    padding: 0.4em 0em 1em 2em;
+    font-size: 0.4em;
+  }
+
+  .timepassed {
+    padding: 0.4em 0em 1em 1em;
+    font-size: 0.4em;
+  }
+
+  .post-title {
+    padding-left: 2em;
+    font-size: 0.6em;
+  }
+
+  .post-content {
+    padding: 0.4em 0em 0.4em 2em;
+    font-size: 0.6em;
+  }
+
   .comments {
     font-size: 0.8em;
     margin-left: 5.5em;
