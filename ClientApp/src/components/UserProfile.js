@@ -26,18 +26,20 @@ const UserProfile = () => {
           <h2 className="user-settings-title">User settings</h2>
         </header>
         {users.map(name => (
-          <article className="white-rectangle" key={name.id}>
-            <h1 className="post-title" key={name.key}>
-              Email Address: {name.email}
-            </h1>
-            <h2 className="post-title" key={name.key}>
-              Username: {name.userName || 'N/A'}
-            </h2>
-            <h2 className="post-title" key={name.key}>
-              Cake day:
-              {(name.dateSignedUp && moment().format('MMM Do YY')) || 'N/A'}
-            </h2>
-          </article>
+          <section className="rectangle-container">
+            <article className="white-rectangle" key={name.id}>
+              <h1 className="post-title" key={name.key}>
+                Email Address: {name.email}
+              </h1>
+              <h2 className="post-title" key={name.key}>
+                Username: {name.userName || 'N/A'}
+              </h2>
+              <h2 className="post-title" key={name.key}>
+                Cake day:
+                {(name.dateSignedUp && moment().format('MMM Do YY')) || 'N/A'}
+              </h2>
+            </article>
+          </section>
         ))}
       </section>
     </>
