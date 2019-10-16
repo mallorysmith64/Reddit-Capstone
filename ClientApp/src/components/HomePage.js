@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
 import Votes from './Votes'
+import moment from 'moment'
 
 const HomePage = () => {
   const [posts, setPosts] = useState([])
@@ -41,7 +42,12 @@ const HomePage = () => {
                   Posted by u/{name.postedBy || 'unknown'}
                 </h3>
                 <h3 className="posted-by" key={name.id}>
-                  TimePassed: {name.timePassed || 'unknown'}
+                  TimePassed:
+                  {(name.timePassed &&
+                    moment()
+                      .startOf('day')
+                      .fromNow()) ||
+                    'unknown'}
                 </h3>
                 <h1 className="post-title" key={name.key}>
                   {name.title}

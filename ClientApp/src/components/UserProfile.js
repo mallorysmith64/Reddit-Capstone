@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from './Nav'
+import moment from 'moment'
 
 const UserProfile = () => {
   const [users, setUsers] = useState([])
@@ -30,7 +31,8 @@ const UserProfile = () => {
               Username: {name.userName || 'N/A'}
             </h2>
             <h2 className="post-title" key={name.key}>
-              Cake day: {name.dateSignedUp || 'N/A'}
+              Cake day:{' '}
+              {(name.dateSignedUp && moment().format('MMM Do YY')) || 'N/A'}
             </h2>
           </article>
         ))}
