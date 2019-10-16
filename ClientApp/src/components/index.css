@@ -182,17 +182,6 @@ nav {
   font-size: 0.6em;
 }
 
-.user-settings-container {
-  display: flex;
-  font-size: 2em;
-  color: black;
-  padding: 0em 1em 0.5em 0em;
-}
-
-.user-settings-title {
-  padding-left: 0.2em;
-}
-
 .comments {
   border: 0.1em solid;
   margin-left: 3em;
@@ -288,6 +277,26 @@ nav {
 
 .search-header {
   font-weight: bold;
+}
+
+/* user settings page */
+.user-settings-container {
+  display: flex;
+  /* justify-content: center; */
+  font-size: 2em;
+  color: black;
+  padding: 0em 1em 0.5em 0em;
+}
+
+.user-settings-title {
+  padding-left: 0.2em;
+}
+
+.white-rectangle {
+  background-color: white;
+  color: black;
+  padding: 1em;
+  width: 25em;
 }
 
 /*mobile version*/
