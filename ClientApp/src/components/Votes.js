@@ -24,9 +24,7 @@ const Votes = props => {
   }
 
   const DecreaseVote = async id => {
-    const resp = await axios.patch(
-      `https://localhost:5001/api/Post/${id}/DownVote`
-    )
+    const resp = await axios.patch(`/api/Post/${id}/DownVote`)
     console.log(DecreaseVote)
     console.log('downvotes response', resp)
     console.log('downvotes', resp.data)
