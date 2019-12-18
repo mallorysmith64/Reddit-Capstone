@@ -1,7 +1,5 @@
 # Reddit
 
-This project is a work in progress.
-
 This CRUD app recreates the look and feel of Reddit.
 Features within this app includes:
 
